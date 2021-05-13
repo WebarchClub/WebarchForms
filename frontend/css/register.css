@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Ubuntu&display=swap');
+/* ********Utilities Classes******** */
+
+.inbetmargin{
+    margin: 15px 0;
+}
+.divcenter{
+    text-align: center;
+}
+.inputwidth{
+    width: 100%;
+}
+.customfontbaloo{
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+.customfontubuntu{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+
+.regcont{
+    border: 2px dotted red;
+    width: 32%;
+}
+.regheading{
+    text-align: center;
+}
+.regheading h1{
+    font-weight: bold;
+}
