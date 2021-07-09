@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.logo{
+    background-image: linear-gradient(to top, #01AFC5 0%, #2E5AC2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo .logo-box{
+    background-color: #fff;
+    width: 30rem;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 0 2.3rem #005081;
+}
+
+.logo .logo-box img{
+    width: 35%;
+    margin-bottom: 1.4rem;
+}
+
+.link{
+    background-color: #fff;
+    margin-top: 3rem;
+    padding: 1rem;
+    width: 30rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.link a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .form-container{
+    background-color: #fff;
+    width: 35rem;
+    padding: 2rem;
+}
+
+.login .form-container form input{
+    border-radius: 1rem;
+}
+
+.password a{
+    color: black;
+    font-weight: bold;
+}
+
+.mybtn{
+    text-align: center;
+}
+
+.mybtn .btn-login{
+    width: 10rem;
+}
+.mybtn .btn-google{
+    width: 15rem;
+}
+
+.signUp{
+    text-align: center;
+}
+
+.signUp a{
+    color: blue;
+    text-decoration: none;
+}
+
+/* Media Queries  */
+
+@media only screen and (max-width: 900px){
+    .logo{
+        display: none;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .login{
+        width: 100%;
+    }
+    .login .form-container{
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1000px){
+    .logo .logo-box{
+        width: 20rem;
+    }
+    .link{
+        width: 20rem;
+    }
+    .logo-box h3{
+        font-size: 15px;
+        font-weight: bold
+    }
+    .logo-box p{
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1130px) {
+    .logo .logo-box{
+        width: 25rem;
+    }
+    .link{
+        width: 25rem;
+    }
+    .logo-box h3{
+        font-size: 22px;
+        font-weight: bold
+    }
+    .logo-box p{
+        font-size: 16px;
+    }
+  }
