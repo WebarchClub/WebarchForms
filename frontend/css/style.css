@@ -1,787 +1,809 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-.row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-
-/* ANIMATION  */
-
-.grow2 {
-    transition: all .01s ease-in-out;
-}
-
-.grow2:hover {
-    transform: scale(1.03);
-}
-
-.grow {
-    transition: all 0.2s ease-in-out !important;
-}
-
-.grow:hover {
-    transform: scale(1.1) !important;
-}
-
-.object {
-    animation: MoveUpDown 3s linear infinite;
-    position: absolute;
-}
-
-@keyframes MoveUpDown {
-    0%,
-    100% {
-        bottom: 0;
+    /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+    
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
-    50% {
-        bottom: 10px;
+    /* ANIMATION  */
+    
+    .grow2 {
+        transition: all .01s ease-in-out;
     }
-}
-
-
-/* scrollbar start  */
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 5px;
-}
-
-.middle {
-    position: relative;
-}
-
-.middle:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-}
-
-.middle:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-
-/* Track */
-
-::-webkit-scrollbar-track {
-    background: #00222D;
-}
-
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-    background: #337d96;
-}
-
-
-/* Handle on hover */
-
- ::-webkit-scrollbar-thumb:hover {
-    background: #bebebe;
-}
-
-
-/* scrollbar end  */
-
-@import url(animate.min.css);
-@import url(normalize.css);
-@import url(icomoon.css);
-@import url(font-awesome.min.css);
-@import url(meanmenu.css);
-@import url(owl.carousel.min.css);
-@import url(swiper.min.css);
-@import url(slick.css);
-@import url(jquery.fancybox.min.css);
-@import url(jquery-ui.css);
-@import url(nice-select.css);
-
-/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
-
-* {
-    box-sizing: border-box !important;
-}
-
-
-/* navbar  */
-
-.navbar {
-    background: #00222D;
-}
-
-.navbar-brand {
-    margin-left: 2%;
-}
-
-.nav-link {
-    margin-right: 60px !important;
-    font-size: 1.2rem;
-    color: white !important;
-    font-weight: "roboto", open-sans;
-}
-
-.nav-button1 {
-    color: black !important;
-    width: 100%;
-    /* margin-right: 60px !important; */
-    background: #FFD700 !important;
-}
-
-.nav-button-mobile {
-    color: black !important;
-    width: 100%;
-    /* margin-right: 60px !important; */
-    background: #FFD700 !important;
-    display: none;
-}
-
-
-/* The side navigation menu */
-
-.sidenav {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
-    position: fixed;
-    /* Stay in place */
-    z-index: 3;
-    /* Stay on top */
-    top: 0;
-    /* Stay at the top */
-    left: 0;
-    background: #00222D;
-    /* Black*/
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
-    transition: 0.2s;
-    /* 0.5 second transition effect to slide in the sidenav */
-}
-
-
-/* The navigation menu links */
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
-    display: block;
-    transition: 0.3s;
-    z-index: 3;
-}
-
-
-/* When you mouse over the navigation links, change their color */
-
-.sidenav a:hover {
-    color: #ffffff;
-}
-
-
-/* Position and style the close button (top right corner) */
-
-#nav-bars {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    font-size: 20px;
-    z-index: 2;
-    color: rgb(255, 255, 255);
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
+    
+    .grow2:hover {
+        transform: scale(1.03);
     }
-    .sidenav a {
-        font-size: 18px;
+    
+    .grow {
+        transition: all 0.2s ease-in-out !important;
     }
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: #fff;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.80857;
-    font-weight: normal;
-}
-
-button:focus {
-    outline: none;
-}
-
-a {
-    text-decoration: none;
-    outline: none !important;
-}
-
-.navbar-form input {
-    border: none !important;
-}
-
-button {
-    cursor: pointer;
-}
-
-
-/**-- heading section --**/
-
-
-/*---------------------------- preloader area ----------------------------*/
-
-.loader_bg {
-    position: fixed;
-    z-index: 9999999;
-    background: #fff;
-    width: 100%;
-    height: 100%;
-}
-
-.loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loader img {
-    width: 280px;
-}
-
-.white_bg {
-    background: rgb(255, 255, 255);
-    height: 90vh;
-    opacity: 1;
-    padding: 40px 35px;
-}
-
-
-/** banner section **/
-
-.text-bg {
-    text-align: left;
-    margin-top: 18vh;
-}
-
-.text-bg h1 {
-    color: #00222D;
-    font-size: 300%;
-    line-height: 115%;
-    padding-bottom: 6vh;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.banner_img_mobile {
-    display: none;
-}
-
-.text-bg p {
-    line-height: 4vh;
-    padding-bottom: 50px;
-    display: block;
-    color: #1f1f1f;
-    font-size: 3vh;
-}
-
-.text_img figure img {
-    width: 90%;
-    margin-top: 5vh;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.scrolldown {
-    color: #2F8BA8;
-    font-style: normal;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-}
-
-
-/** end banner section **/
-
-.titlepage h2 {
-    font-size: 45px;
-    color: #202020;
-    line-height: 10px;
-    font-weight: normal;
-    padding: 0;
-    text-transform: uppercase;
-}
-
-.titlepage p {
-    font-size: 20px;
-    color: #090a0b;
-    padding-top: 30px;
-}
-
-.d_flex {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-
-/** about section **/
-
-
-/** services section **/
-
-.services {
-    background: -webkit-linear-gradient(180deg, #328CA9 0%, #007297 100%);
-    border-radius: 20px;
-    background-repeat: no-repeat;
-    height: auto;
-    padding: 60px 0 60px 0;
-    margin-top: 0px;
-}
-
-.services .titlepage h2 {
-    color: white;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-transform: none;
-}
-
-.services_main {
-    text-align: center;
-    margin-top: 10%;
-}
-
-.services_main h3 {
-    color: #000;
-    font-size: 30px;
-    line-height: 25px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    padding-top: 30px;
-    transition: ease-in all 0.5s;
-}
-
-.services_main p {
-    font-size: 17px;
-    line-height: 30px;
-    margin-top: 5%;
-    color: #000;
-    margin-bottom: 30px;
-}
-
-.card {
-    width: 18rem;
-    background: #F5F5F5;
-    margin-top: 10%;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-}
-
-.service-card-heading {
-    color: white;
-    text-transform: none;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-    margin-top: 10px !important;
-}
-
-.service-card-heading:hover {
-    color: rgb(226, 226, 226);
-    text-transform: none;
-    text-decoration: none;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-}
-
-.service-card-heading {
-    margin-top: 5% !important;
-}
-
-
-/* about section  */
-
-.about-heading {
-    color: black;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    margin-top: 3%;
-    font-weight: 700;
-    line-height: 22px;
-}
-
-.about-para {
-    color: black;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-    align-items: center !important;
-    margin-top: 5%;
-    padding: 30px;
-    padding-bottom: 0;
-}
-
-.about-para2 {
-    font-family: Montserrat;
-    text-decoration: none;
-    font-size: 18px;
-    font-style: normal;
-    color: #328CA9 !important;
-    font-weight: 400;
-    line-height: 22px;
-    align-items: center !important;
-    padding: 0 30px;
-}
-
-.about-para-link {
-    text-decoration: none;
-    font-size: 18px;
-    color: #328CA9 !important;
-}
-
-.about-img {
-    height: 250px;
-    width: 250px;
-    margin-bottom: 15%;
-}
-
-
-/* footer section start ----------------------- */
-
-footer {
-    background: #00222D;
-    color: white;
-    padding: 0;
-}
-
-hr.light {
-    border-top: 1px solid #d5d5d5;
-    width: 100%;
-    margin-top: .8rem;
-}
-
-.webarch {
-    text-align: center;
-    color: #00E8FF;
-    font-size: 13px;
-}
-
-.webarch:hover {
-    color: #84c3fd;
-}
-
-footer a {
-    color: #d5d5d5;
-}
-
-hr.light-100 {
-    border-top: 1px solid #d5d5d5;
-    width: 100%;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
-}
-
-li {
-    list-style-type: none;
-}
-
-.social_icon li a {
-    font-size: 30px;
-    margin-right: 1vw;
-}
-
-li a:hover {
-    color: #84c3fd;
-    text-decoration: none;
-}
-
-.webarch-website a:hover {
-    color: #84c3fd;
-    text-decoration: none;
-}
-
-.footer_inner1 {
-    margin-left: 35%;
-}
-
-.socialresponsive {
-    align-items: center;
-}
-
-ul.social_icon {
-    align-items: center;
-    margin-left: auto;
-}
-
-ul.social_icon li {
-    float: left;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    margin-left: 2px;
-    padding: 0;
-}
-
-#nav-bars {
-    display: none;
-}
-
-
-/*--- Bootstrap Padding Fix --*/
-
-[class*="p1"] {
-    padding: 1rem;
-}
-
-
-/* footer section end ---------------------------- */
-
-
-/** end services section **/
-
-
-/* for larger screens */
-
-@media (max-width: 992px) {
-    #nav-bars {
-        display: block;
+    
+    .grow:hover {
+        transform: scale(1.1) !important;
     }
-    .navbar-toggler {
-        display: none;
+    
+    .rotate {
+        transition: transform .5s ease-in-out;
     }
-    .navbar-brand {
-        display: none;
+    
+    .rotate:hover {
+        transform: rotate(360deg);
     }
-    .navbar {
-        height: 65px;
-    }
-    .nav-button-mobile {
-        color: black !important;
+    
+    .object {
+        animation: MoveUpDown 3s linear infinite;
         position: absolute;
-        top: 10px;
-        right: -40px;
-        z-index: 2;
-        width: 20%;
+    }
+    
+    @keyframes MoveUpDown {
+        0%,
+        100% {
+            bottom: 0;
+        }
+        50% {
+            bottom: 10px;
+        }
+    }
+    /* scrollbar start  */
+    
+     ::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+    
+    .middle {
+        position: relative;
+    }
+    
+    .middle:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .middle:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    /* Track */
+    
+     ::-webkit-scrollbar-track {
+        background: #00222D;
+    }
+    /* Handle */
+    
+     ::-webkit-scrollbar-thumb {
+        background: #337d96;
+    }
+    /* Handle on hover */
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: #bebebe;
+    }
+    /* scrollbar end  */
+    
+    @import url(animate.min.css);
+    @import url(normalize.css);
+    @import url(icomoon.css);
+    @import url(font-awesome.min.css);
+    @import url(meanmenu.css);
+    @import url(owl.carousel.min.css);
+    @import url(swiper.min.css);
+    @import url(slick.css);
+    @import url(jquery.fancybox.min.css);
+    @import url(jquery-ui.css);
+    @import url(nice-select.css);
+    /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+    
+    * {
+        box-sizing: border-box !important;
+    }
+    /* navbar  */
+    
+    .navbar {
+        background: #00222D;
+    }
+    
+    .navbar-brand {
+        margin-left: 2%;
+    }
+    
+    .nav-link {
+        margin-right: 60px !important;
+        font-size: 1.2rem;
+        color: white !important;
+        font-weight: "roboto", open-sans;
+    }
+    
+    .nav-button1 {
+        color: black !important;
+        width: 100%;
         /* margin-right: 60px !important; */
         background: #FFD700 !important;
-        display: block;
     }
-    .banner_img_mobile {
-        display: block;
-    }
-    .banner_img_desktop {
+    
+    .nav-button-mobile {
+        color: black !important;
+        width: 100%;
+        /* margin-right: 60px !important; */
+        background: #FFD700 !important;
         display: none;
     }
-    .banner_mobile {
-        width: 80% !important;
+    /* The side navigation menu */
+    
+    .sidenav {
+        height: 100%;
+        /* 100% Full-height */
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 3;
+        /* Stay on top */
+        top: 0;
+        /* Stay at the top */
+        left: 0;
+        background: #00222D;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 60px;
+        /* Place content 60px from the top */
+        transition: 0.2s;
+        /* 0.5 second transition effect to slide in the sidenav */
     }
-}
-
-
-/* for tablets */
-
-@media (max-width: 768px) {
-    .navbar-brand {
-        margin-left: 90%;
-    }
-    #nav-bars {
+    /* The navigation menu links */
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
         display: block;
+        transition: 0.3s;
+        z-index: 3;
     }
-    .footer_inner1 {
-        margin-left: 40%;
+    /* When you mouse over the navigation links, change their color */
+    
+    .sidenav a:hover {
+        color: #ffffff;
     }
-    .services_main img {
-        height: 80px;
-    }
-    .text-bg h1 {
-        color: #050505;
-        font-size: 450%;
-        line-height: 115%;
-        padding-bottom: 5vh;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    .nav-button-mobile {
-        width: 35%;
-    }
-}
-
-
-/* for mobile screens */
-
-@media (max-width: 576px) {
-    .navbar-brand {
-        margin-left: 85%;
-    }
-    .nav-button-mobile {
-        width: 40% !important;
-    }
-    .services {
-        padding: 20px 0 0px 0;
-        margin-top: 0px;
-        height: auto;
-    }
-    .titlepage h2 {
-        font-size: 38px;
-        color: #202020;
-        line-height: 40px;
-        font-weight: 500;
-    }
-    .titlepage {
-        padding: 0;
-    }
-    .services_main {
-        margin-top: 10%;
-    }
-    .services_main h3 {
-        font-size: 28px;
-        line-height: 25px;
-        padding-top: 15px;
-    }
-    .services_main p {
-        font-size: 18px;
-        line-height: 30px;
-        margin-bottom: 30px;
-    }
-    .services_main img {
-        height: 60px;
-    }
-    .card {
-        margin-top: 10%;
-    }
-    .login {
-        font-size: 15px;
-    }
-    .text-bg {
-        text-align: center;
-    }
-    .text-bg p {
-        font-size: 1.4em;
-        padding-bottom: 3em;
-    }
-    .text-bg h1 {
-        font-size: 50px;
-        line-height: 50px;
-    }
-    .footer_image img {
-        z-index: 10;
-        height: 50px;
-        width: 300px;
-    }
-    .footer_inner1 {
-        margin-left: 37%;
-    }
-}
-
-
-/* for extra small mobile devices */
-
-@media (max-width: 380px) {
-    .login {
-        font-size: 15px;
-    }
-    .text-bg {
-        text-align: center;
-    }
-    .text-bg p {
-        font-size: 1.1em;
-        padding-bottom: 3em;
-        font-weight: 400;
-    }
-    .text-bg span {
-        font-size: 2.2rem;
-    }
-    .text-bg h1 {
-        font-size: 3rem;
-        line-height: 43px;
-    }
-    .footer_inner1 {
-        margin-left: 31%;
-    }
-}
-
-@media (max-width: 320px) {
-    .text-bg span {
-        font-size: 18px;
-    }
-    .text-bg h1 {
-        font-size: 27px;
-        line-height: 12px;
-    }
-    .text-bg p {
-        font-size: 1em;
-        padding-bottom: 2em;
-        font-weight: 400;
-    }
-}
-
-@media (min-width: 1390px) {
-    .text-bg {
-        margin-top: 10vh;
-    }
-    .text_img figure img {
-        width: 90%;
-        margin-top: 10vh;
-    }
+    /* Position and style the close button (top right corner) */
+    
     #nav-bars {
         position: absolute;
         left: 20px;
         top: 10px;
-        font-size: 30px;
+        font-size: 20px;
+        z-index: 2;
+        color: rgb(255, 255, 255);
     }
-}
+    
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    
+    #main {
+        transition: margin-left .5s;
+        padding: 20px;
+    }
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.80857;
+        font-weight: normal;
+    }
+    
+    button:focus {
+        outline: none;
+    }
+    
+    a {
+        text-decoration: none;
+        outline: none !important;
+    }
+    
+    .navbar-form input {
+        border: none !important;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    /**-- heading section --**/
+    /*---------------------------- preloader area ----------------------------*/
+    
+    .loader_bg {
+        position: fixed;
+        z-index: 9999999;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .loader img {
+        width: 280px;
+    }
+    
+    .white_bg {
+        background: rgb(255, 255, 255);
+        /* height: 90vh; */
+        opacity: 1;
+        padding: 40px 35px;
+    }
+    /** banner section **/
+    
+    .text-bg {
+        text-align: left;
+        margin-top: 18vh;
+    }
+    
+    .text-bg h1 {
+        color: #00222D;
+        font-size: 300%;
+        line-height: 115%;
+        padding-bottom: 6vh;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .text-bg p {
+        line-height: 4vh;
+        padding-bottom: 50px;
+        display: block;
+        color: #1f1f1f;
+        font-size: 3vh;
+    }
+    
+    .text_img figure img {
+        width: 90%;
+        margin-top: 5vh;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .banner_img_mobile {
+        display: none;
+    }
+    
+    .scrolldown {
+        color: #2F8BA8;
+        font-style: normal;
+        text-decoration: none !important;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    /** end banner section **/
+    
+    .titlepage h2 {
+        font-size: 45px;
+        color: #202020;
+        line-height: 10px;
+        font-weight: normal;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    
+    .titlepage p {
+        font-size: 20px;
+        color: #090a0b;
+        padding-top: 30px;
+    }
+    
+    .d_flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    /** about section **/
+    /** services section **/
+    
+    .services {
+        background: -webkit-linear-gradient(180deg, #328CA9 0%, #007297 100%);
+        border-radius: 20px;
+        background-repeat: no-repeat;
+        height: auto;
+        padding: 60px 0 60px 0;
+        margin-top: 0px;
+    }
+    
+    .services .titlepage h2 {
+        color: white;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-transform: none;
+    }
+    
+    .services_main {
+        text-align: center;
+        margin-top: 10%;
+    }
+    
+    .services_main h3 {
+        color: #000;
+        font-size: 30px;
+        line-height: 25px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        padding-top: 30px;
+        transition: ease-in all 0.5s;
+    }
+    
+    .services_main p {
+        font-size: 17px;
+        line-height: 30px;
+        margin-top: 5%;
+        color: #000;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        width: 18rem;
+        background: #F5F5F5;
+        margin-top: 10%;
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+    }
+    
+    .service-card-heading {
+        color: white;
+        text-transform: none;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        margin-top: 10px !important;
+    }
+    
+    .service-card-heading:hover {
+        color: rgb(226, 226, 226);
+        text-transform: none;
+        text-decoration: none;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+    }
+    
+    .service-card-heading {
+        margin-top: 5% !important;
+    }
+    /* about section  */
+    
+    .about-heading {
+        color: black;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        margin-top: 3%;
+        font-weight: 700;
+        line-height: 22px;
+    }
+    
+    .about-para {
+        color: black;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        align-items: center !important;
+        margin-top: 5%;
+        padding: 30px;
+        padding-bottom: 0;
+    }
+    
+    .about-para2 {
+        font-family: Montserrat;
+        text-decoration: none;
+        font-size: 18px;
+        font-style: normal;
+        color: #328CA9 !important;
+        font-weight: 400;
+        line-height: 22px;
+        align-items: center !important;
+        padding: 0 30px;
+    }
+    
+    .about-para-link {
+        text-decoration: none;
+        font-size: 18px;
+        color: #328CA9 !important;
+    }
+    
+    .about-img {
+        height: 250px;
+        width: 250px;
+        margin-bottom: 15%;
+    }
+    
+    .about-img-mobile {
+        display: none;
+    }
+    /* footer section start ----------------------- */
+    
+    footer {
+        background: #00222D;
+        color: white;
+        padding: 0;
+    }
+    
+    hr.light {
+        border-top: 1px solid #d5d5d5;
+        width: 100%;
+        margin-top: .8rem;
+    }
+    
+    .webarch {
+        text-align: center;
+        color: #00E8FF;
+        font-size: 13px;
+    }
+    
+    .webarch:hover {
+        color: #84c3fd;
+    }
+    
+    footer a {
+        color: #d5d5d5;
+    }
+    
+    hr.light-100 {
+        border-top: 1px solid #d5d5d5;
+        width: 100%;
+        margin-top: .8rem;
+        margin-bottom: 1rem;
+    }
+    
+    li {
+        list-style-type: none;
+    }
+    
+    .social_icon li a {
+        font-size: 30px;
+        margin-right: 1vw;
+    }
+    
+    li a:hover {
+        color: #84c3fd;
+        text-decoration: none;
+    }
+    
+    .webarch-website a:hover {
+        color: #84c3fd;
+        text-decoration: none;
+    }
+    
+    .footer_inner1 {
+        margin-left: 35%;
+    }
+    
+    .socialresponsive {
+        align-items: center;
+    }
+    
+    ul.social_icon {
+        align-items: center;
+        margin-left: auto;
+    }
+    
+    ul.social_icon li {
+        float: left;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 2px;
+        padding: 0;
+    }
+    
+    #nav-bars {
+        display: none;
+    }
+    /*--- Bootstrap Padding Fix --*/
+    
+    [class*="p1"] {
+        padding: 1rem;
+    }
+    /* footer section end ---------------------------- */
+    /** end services section **/
+    /* for larger screens */
+    
+    @media (max-width: 992px) {
+        #nav-bars {
+            display: block;
+        }
+        .navbar-toggler {
+            display: none;
+        }
+        .navbar-brand {
+            display: none;
+        }
+        .navbar {
+            height: 65px;
+        }
+        .text-bg {
+            margin-top: 1vh;
+        }
+        .text-bg h1 {
+            font-size: 300%;
+            line-height: 115%;
+            padding-bottom: 4vh;
+            font-weight: 600;
+        }
+        .text-bg p {
+            line-height: 4vh;
+            padding-bottom: 20px;
+            font-size: 2.8vh;
+        }
+        .banner_mobile {
+            width: 30% !important;
+            margin-top: 0;
+        }
+        .nav-button-mobile {
+            color: black !important;
+            position: absolute;
+            top: 10px;
+            right: -40px;
+            z-index: 2;
+            width: 20%;
+            /* margin-right: 60px !important; */
+            background: #FFD700 !important;
+            display: block;
+        }
+        .banner_img_mobile {
+            display: block;
+        }
+        .banner_img_desktop {
+            display: none;
+        }
+    }
+    /* for tablets */
+    
+    @media (max-width: 768px) {
+        .navbar-brand {
+            margin-left: 90%;
+        }
+        #nav-bars {
+            display: block;
+        }
+        .footer_inner1 {
+            margin-left: 40%;
+        }
+        .card {
+            width: 15rem;
+        }
+        .nav-button-mobile {
+            width: 35%;
+        }
+        .text-bg {
+            margin-top: 1vh;
+        }
+        .text-bg h1 {
+            font-size: 300%;
+            line-height: 115%;
+            padding-bottom: 4vh;
+            font-weight: 600;
+        }
+        .text-bg p {
+            line-height: 4vh;
+            padding-bottom: 20px;
+            font-size: 2.8vh;
+        }
+        .banner_mobile {
+            width: 30% !important;
+            margin-top: 0;
+        }
+        .about-img-mobile {
+            display: block;
+            height: 200px;
+            width: 200px;
+            margin: 5% 0;
+        }
+        .about-para2 {
+            text-align: center;
+            margin-bottom: 8%;
+        }
+        .about-img-desktop {
+            display: none;
+        }
+    }
+    /* for mobile screens */
+    
+    @media (max-width: 576px) {
+        .navbar-brand {
+            margin-left: 85%;
+        }
+        .nav-button-mobile {
+            width: 40% !important;
+        }
+        .services {
+            padding: 20px 0 0px 0;
+            margin-top: 0px;
+            height: auto;
+        }
+        .titlepage h2 {
+            font-size: 38px;
+            color: #202020;
+            line-height: 40px;
+            font-weight: 500;
+        }
+        .titlepage {
+            padding: 0;
+        }
+        .services_main {
+            margin-top: 10%;
+        }
+        .services_main h3 {
+            font-size: 28px;
+            line-height: 25px;
+            padding-top: 15px;
+        }
+        .services_main p {
+            font-size: 18px;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+        .services_main img {
+            height: 60px;
+        }
+        .card {
+            margin-top: 10%;
+        }
+        .about-img-mobile {
+            height: 180px;
+            width: 180px;
+            margin: 0;
+        }
+        .about-para2 {
+            text-align: center;
+            margin-bottom: 8%;
+        }
+        .text-bg {
+            margin-top: 1vh;
+        }
+        .white_bg {
+            padding: 0;
+        }
+        .text-bg h1 {
+            font-size: 250%;
+            line-height: 110%;
+            padding-bottom: 2vh;
+            font-weight: 600;
+        }
+        .text-bg p {
+            line-height: 4vh;
+            padding-bottom: 20px;
+            font-size: 2.5vh;
+        }
+        .banner_mobile {
+            width: 50% !important;
+            margin-top: 0;
+        }
+        .about-para2 {
+            padding: 0;
+            margin: 5% 0 !important;
+        }
+        .about-para {
+            padding: 0;
+            margin: 15% 0 !important;
+            line-height: 20px;
+            font-size: 17px;
+        }
+        .about-img {
+            margin: 5% 0;
+            width: 180px;
+            height: 180px;
+        }
+        .footer_image img {
+            z-index: 10;
+            height: 50px;
+            width: 300px;
+        }
+        .footer_inner1 {
+            margin-left: 37%;
+        }
+    }
+    /* for extra small mobile devices */
+    
+    @media (max-width: 380px) {
+        .footer_inner1 {
+            margin-left: 31%;
+        }
+        .text-bg h1 {
+            font-size: 250%;
+            line-height: 110%;
+            padding-bottom: 2vh;
+            padding-top: 2vh;
+            font-weight: 600;
+        }
+        .about-img {
+            margin: 5% 0;
+            width: 160px;
+            height: 160px;
+        }
+        .white_bg {
+            height: 90vh;
+        }
+        .text-bg p {
+            line-height: 3vh;
+            padding-bottom: 20px;
+            font-size: 2.5vh;
+        }
+        .banner_mobile {
+            width: 70% !important;
+            margin-top: 0;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .banner_mobile {
+            width: 80% !important;
+            margin-top: 0;
+        }
+    }
+    
+    @media (min-width: 1390px) {
+        .text-bg {
+            margin-top: 10vh;
+        }
+        .text_img figure img {
+            width: 90%;
+            margin-top: 10vh;
+        }
+        #nav-bars {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            font-size: 30px;
+        }
+    }
