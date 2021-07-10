@@ -90,7 +90,7 @@ section{
 
 /* Media Queries  */
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 673px){
     .logo{
         display: none;
     }
@@ -105,6 +105,23 @@ section{
     }
     .login .form-container{
         width: 100%;
+    }
+}
+
+@media (min-width: 674px) and (max-width: 900px){
+    .logo .logo-box{
+        width: 17rem;
+        margin: 0 1rem;
+    }
+    .link{
+        width: 17rem;
+    }
+    .logo-box h3{
+        font-size: 13px;
+        font-weight: bold
+    }
+    .logo-box p{
+        font-size: 9px;
     }
 }
 
