@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 100%;
+}
 section{
     min-height: 100vh;
     display: grid;
@@ -122,6 +125,12 @@ section{
     }
     .logo-box p{
         font-size: 9px;
+    }
+    html{
+        font-size: 95%;
+    }
+    .login .form-container{
+        width: 25rem;
     }
 }
 
