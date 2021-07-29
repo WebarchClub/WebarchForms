@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* navbar styling  */
+nav {
+  background-color: #1f74c2;
+  height: 120px;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+}
+nav i,
+nav .btn {
+  cursor: pointer;
+}
+nav .heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+nav .heading .col {
+  color: white;
+}
+nav .heading .col-left .arrow {
+  margin-right: 20px;
+}
+nav .heading .col-left span {
+  font-weight: 600;
+}
+nav .heading .col-left .edit {
+  margin-left: 10px;
+}
+nav .heading .col-right i {
+  margin: 0 15px;
+}
+nav .heading .col-right .btn {
+  margin-left: 10px;
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: #ffd700;
+  border-radius: 5px;
+}
+nav .toggle {
+  position: relative;
+  top: 35px;
+  display: flex;
+  justify-content: center;
+  /* gap: 40px; */
+  gap: 5px;
+}
+nav .toggle .nav-link {
+  padding: 0 25px 7px;
+}
+nav .toggle .nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+nav .toggle .nav-link a {
+  text-decoration: none;
+  color: white;
+}
+nav .toggle .nav-link.active a {
+  font-weight: 600;
+}
+/* body styling  */
+.body-content {
+  margin: 0 auto;
+  width: 60rem;
+}
+.body-content .title-section {
+  position: relative;
+  margin-top: 20px;
+  background-color: #c4c4c4;
+  height: 150px;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.body-content .title-section .title {
+  position: absolute;
+  bottom: 15px;
+  border: none;
+  background: #fff;
+  width: 230px;
+  height: 50px;
+  padding: 10px;
+  font-size: 20px;
+}
+.body-content .description input {
+  width: 100%;
+  margin: 20px 0;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 2px solid #1f74c2;
+}
+
+.body-content .form-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  gap: 30px;
+  position: relative;
+}
+
+.body-content .form-content .form-container {
+  position: relative;
+  height: 330px;
+  border: 2px solid #1f74c2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.body-content .form-content .form-container.w-100 {
+  width: 100%;
+}
+.body-content .form-content .form-container.w-50 {
+  width: 48%;
+}
+.body-content .form-content .form-container .select-box {
+  position: relative;
+  border: 2px solid #1f74c2;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.body-content .form-content .form-container.w-100 .select-box {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+.body-content .form-content .form-container select {
+  width: 190px;
+  /* padding: 5px; */
+  border: none;
+}
+.body-content .form-content .form-container select option {
+  padding: 0;
+  background: rgb(255, 255, 255);
+  color: #000;
+}
+.body-content .form-content .form-container textarea {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 2px solid #1f74c2;
+  background-color: #f1f8ff;
+  height: 85px;
+  padding: 10px;
+  font-size: 13px;
+}
+.body-content .form-content .form-container.w-100 .text-box {
+  position: relative;
+  width: 70%;
+}
+.body-content .form-content .form-container textarea::placeholder {
+  color: #1f74c2;
+  opacity: 1;
+}
+.body-content .form-content .form-container .textarea-icon {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  color: #1f74c2;
+  cursor: pointer;
+}
+.body-content .form-content .form-container .input .option {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid #1f74c2;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+.body-content .form-content .form-container .input .option i {
+  color: #1f74c2;
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 13px;
+}
+.body-content .form-content .form-container .input .add-option {
+  margin-top: 10px;
+}
+.body-content .form-content .form-container .input .add-option span {
+  font-size: 13px;
+  color: #1f74c2;
+  text-decoration: underline;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.body-content .form-content .form-container .input input[type="text"] {
+  border: none !important;
+  outline: none !important;
+  padding-left: 5px;
+  width: 90%;
+}
+.body-content .form-content .form-container .bottom-section {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  padding: 15px 20px;
+  background-color: #f1f8ff;
+  display: flex;
+  justify-content: space-between;
+}
+.body-content .form-content .form-container .bottom-section span.child {
+  color: #1f74c2;
+}
+.body-content .form-content .form-container .bottom-section i {
+  margin: 0 10px;
+  cursor: pointer;
+}
+.body-content .form-content .form-container .bottom-section .required {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.body-content .form-content .form-container .bottom-section input[type="checkbox"] {
+  appearance: none;
+  cursor: pointer;
+  width: 25px;
+  height: 16px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  position: relative;
+  top: 3px;
+  left: 5px;
+  transition: 0.3s;
+}
+.body-content .form-content .form-container .bottom-section input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+.body-content .form-content .form-container .bottom-section input[type="checkbox"]:checked:before {
+  transform: translateX(9px);
+  background: #1f74c2;
+  border-color: #1f74c2;
+}
+
+.body-content .form-content .form-container .bottom-section input[type="checkbox"]:checked {
+  border-color: #1f74c2;
+}
+
+.body-content .add-content-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.body-content .add-content {
+  position: relative;
+  background-color: #009980;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 150px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.body-content .add-content .options {
+  position: relative;
+  background-color: inherit;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  cursor: pointer;
+}
+.body-content .add-content .add-options {
+  position: absolute;
+  left: -10px;
+  display: none;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  background: #009980;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+.body-content .add-content .add-options li {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  padding: 5px 25px;
+  background: #009980;
+  font-size: 13px;
+}
+.body-content .add-content .add-options li:hover {
+  background: #4d4d4da8;
+}
+.body-content .add-content .addQuestion:hover .add-options {
+  display: block;
+}
