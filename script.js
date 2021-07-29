@@ -2,99 +2,101 @@ $(document).ready(function () {
   const addQuestionList = $(".addQuestionList");
   const addQuestionGrid = $(".addQuestionGrid");
   const formContainer = $(".form-content");
-  addQuestionList.click(function () {
-    formContainer.append(`
-        <div class="form-container w-100">
-            <div class="form-header">
-            <div class="select-box">
-                <select name="type" id="type">
-                <option value="mcq">Multiple Choice</option>
-                <option value="short">Short answer</option>
-                <option value="para">Paragraph</option>
-                <option value="checkbox">Checkboxes</option>
-                <option value="dropdown">Dropdown</option>
-                <option value="date">Date</option>
-                <option value="time">Time</option>
-                <option value="file">File Upload</option>
-                </select>
-            </div>
-            <div class="text-box">
-                <textarea placeholder="Enter question"></textarea>
-                <i class="fas fa-photo-video textarea-icon"></i>
-            </div>
-            </div>
-            <div class="input">
-            <div class="mcqs">
-                <div class="option">
-                <input type="radio" />
-                <input type="text" placeholder="Enter option" />
-                <i class="far fa-trash-alt deleteOption"></i>
-                </div>
-            </div>
-            <div class="add-option">
-                <input type="radio" />
-                <span class="addMcq">Add another</span>
-            </div>
-            </div>
-            <div class="bottom-section">
-            <span class="child">
-                <span class="required">Required</span>
-                <input type="checkbox" />
-            </span>
-            <span class="child">
-                <i class="far fa-copy copyQuestion"></i>
-                <i class="far fa-trash deleteQuestion"></i>
-            </span>
-            </div>
+  const grid = `
+  <div class="form-container w-50">
+      <div class="form-header">
+      <div class="select-box">
+          <select name="type" id="type">
+          <option value="mcq">Multiple Choice</option>
+          <option value="short">Short answer</option>
+          <option value="para">Paragraph</option>
+          <option value="checkbox">Checkboxes</option>
+          <option value="dropdown">Dropdown</option>
+          <option value="date">Date</option>
+          <option value="time">Time</option>
+          <option value="file">File Upload</option>
+          </select>
+      </div>
+      <div class="text-box">
+          <textarea placeholder="Enter question"></textarea>
+          <i class="fas fa-photo-video textarea-icon"></i>
+      </div>
+      </div>
+      <div class="input">
+      <div class="mcqs">
+          <div class="option">
+          <input type="radio" />
+          <input type="text" placeholder="Enter option" />
+          <i class="far fa-trash-alt deleteOption"></i>
+          </div>
+      </div>
+      <div class="add-option">
+          <input type="radio" />
+          <span class="addMcq">Add another</span>
+      </div>
+      </div>
+      <div class="bottom-section">
+      <span class="child">
+          <span class="required">Required</span>
+          <input type="checkbox" />
+      </span>
+      <span class="child">
+          <i class="far fa-copy copyQuestion"></i>
+          <i class="far fa-trash deleteQuestion"></i>
+      </span>
+      </div>
+  </div>
+`;
+  const list = `
+<div class="form-container w-100">
+    <div class="form-header">
+    <div class="select-box">
+        <select name="type" id="type">
+        <option value="mcq">Multiple Choice</option>
+        <option value="short">Short answer</option>
+        <option value="para">Paragraph</option>
+        <option value="checkbox">Checkboxes</option>
+        <option value="dropdown">Dropdown</option>
+        <option value="date">Date</option>
+        <option value="time">Time</option>
+        <option value="file">File Upload</option>
+        </select>
+    </div>
+    <div class="text-box">
+        <textarea placeholder="Enter question"></textarea>
+        <i class="fas fa-photo-video textarea-icon"></i>
+    </div>
+    </div>
+    <div class="input">
+    <div class="mcqs">
+        <div class="option">
+        <input type="radio" />
+        <input type="text" placeholder="Enter option" />
+        <i class="far fa-trash-alt deleteOption"></i>
         </div>
-    `);
+    </div>
+    <div class="add-option">
+        <input type="radio" />
+        <span class="addMcq">Add another</span>
+    </div>
+    </div>
+    <div class="bottom-section">
+    <span class="child">
+        <span class="required">Required</span>
+        <input type="checkbox" />
+    </span>
+    <span class="child">
+        <i class="far fa-copy copyQuestion"></i>
+        <i class="far fa-trash deleteQuestion"></i>
+    </span>
+    </div>
+</div>
+`;
+  addQuestionList.click(function () {
+    formContainer.append(list);
   });
   addQuestionGrid.click(function () {
-    formContainer.append(`
-        <div class="form-container w-50">
-            <div class="form-header">
-            <div class="select-box">
-                <select name="type" id="type">
-                <option value="mcq">Multiple Choice</option>
-                <option value="short">Short answer</option>
-                <option value="para">Paragraph</option>
-                <option value="checkbox">Checkboxes</option>
-                <option value="dropdown">Dropdown</option>
-                <option value="date">Date</option>
-                <option value="time">Time</option>
-                <option value="file">File Upload</option>
-                </select>
-            </div>
-            <div class="text-box">
-                <textarea placeholder="Enter question"></textarea>
-                <i class="fas fa-photo-video textarea-icon"></i>
-            </div>
-            </div>
-            <div class="input">
-            <div class="mcqs">
-                <div class="option">
-                <input type="radio" />
-                <input type="text" placeholder="Enter option" />
-                <i class="far fa-trash-alt deleteOption"></i>
-                </div>
-            </div>
-            <div class="add-option">
-                <input type="radio" />
-                <span class="addMcq">Add another</span>
-            </div>
-            </div>
-            <div class="bottom-section">
-            <span class="child">
-                <span class="required">Required</span>
-                <input type="checkbox" />
-            </span>
-            <span class="child">
-                <i class="far fa-copy copyQuestion"></i>
-                <i class="far fa-trash deleteQuestion"></i>
-            </span>
-            </div>
-        </div>
-    `);
+    formContainer.append(grid);
   });
 
   // delete question
