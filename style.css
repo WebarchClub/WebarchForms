@@ -152,8 +152,10 @@ nav .toggle .nav-link.active a {
   padding: 10px;
   font-size: 13px;
 }
-.body-content .form-content .form-container.w-100 .text-box {
+.body-content .form-content .form-container .text-box {
   position: relative;
+}
+.body-content .form-content .form-container.w-100 .text-box {
   width: 70%;
 }
 .body-content .form-content .form-container textarea::placeholder {
