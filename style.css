@@ -5,7 +5,15 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-
+input:focus,
+textarea:focus {
+  outline: none !important;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #1f74c2;
+  opacity: 0.9;
+}
 /* navbar styling  */
 nav {
   background-color: #1f74c2;
@@ -70,6 +78,7 @@ nav .toggle .nav-link.active a {
 .body-content {
   margin: 0 auto;
   width: 60rem;
+  transition: width 0.3s;
 }
 .body-content .title-section {
   position: relative;
@@ -120,6 +129,8 @@ nav .toggle .nav-link.active a {
 .body-content .form-content .form-container.w-50 {
   width: 48%;
 }
+
+/* select option styling  */
 .body-content .form-content .form-container .select-box {
   position: relative;
   border: 2px solid #1f74c2;
@@ -142,7 +153,9 @@ nav .toggle .nav-link.active a {
   background: rgb(255, 255, 255);
   color: #000;
 }
-.body-content .form-content .form-container textarea {
+
+/* question title styling  */
+.body-content .form-content .form-container .text-box textarea {
   width: 100%;
   margin-top: 10px;
   border: none;
@@ -158,25 +171,24 @@ nav .toggle .nav-link.active a {
 .body-content .form-content .form-container.w-100 .text-box {
   width: 70%;
 }
-.body-content .form-content .form-container textarea::placeholder {
-  color: #1f74c2;
-  opacity: 1;
-}
-.body-content .form-content .form-container .textarea-icon {
+
+.body-content .form-content .form-container .text-box .textarea-icon {
   position: absolute;
   top: 18px;
   right: 10px;
   color: #1f74c2;
   cursor: pointer;
 }
-.body-content .form-content .form-container .input .option {
+
+/* mcq option styling  */
+.body-content .form-content .form-container .input .mcq-option .option {
   position: relative;
   width: 100%;
   border-bottom: 2px solid #1f74c2;
   margin: 5px 0;
   padding: 10px 0;
 }
-.body-content .form-content .form-container .input .option i {
+.body-content .form-content .form-container .input .mcq-option .option i {
   color: #1f74c2;
   position: absolute;
   right: 10px;
@@ -185,10 +197,10 @@ nav .toggle .nav-link.active a {
   cursor: pointer;
   font-size: 13px;
 }
-.body-content .form-content .form-container .input .add-option {
+.body-content .form-content .form-container .input .mcq-option .add-option {
   margin-top: 10px;
 }
-.body-content .form-content .form-container .input .add-option span {
+.body-content .form-content .form-container .input .mcq-option .add-option span {
   font-size: 13px;
   color: #1f74c2;
   text-decoration: underline;
@@ -196,12 +208,166 @@ nav .toggle .nav-link.active a {
   cursor: pointer;
 }
 
-.body-content .form-content .form-container .input input[type="text"] {
+.body-content .form-content .form-container .input .mcq-option input[type="text"] {
   border: none !important;
   outline: none !important;
   padding-left: 5px;
   width: 90%;
 }
+
+/* short answer styling  */
+.body-content .form-content .form-container .input .short-option {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid #1f74c2;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+.body-content .form-content .form-container .input .short-option input[type="text"] {
+  border: none !important;
+  outline: none !important;
+  padding-left: 5px;
+  width: 90%;
+}
+/* paragraph option styling  */
+.body-content .form-content .form-container .input .para-option textarea {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 2px solid #1f74c2;
+  background-color: #f1f8ff;
+  height: 100px;
+  padding: 10px;
+  font-size: 13px;
+}
+/* checkbox option styling  */
+
+.body-content .form-content .form-container .input .checkbox-option .option {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid #1f74c2;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+.body-content .form-content .form-container .input .checkbox-option .option i {
+  color: #1f74c2;
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 13px;
+}
+.body-content .form-content .form-container .input .checkbox-option .add-checkbox {
+  margin-top: 10px;
+}
+.body-content .form-content .form-container .input .checkbox-option .add-checkbox span {
+  font-size: 13px;
+  color: #1f74c2;
+  text-decoration: underline;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.body-content .form-content .form-container .input .checkbox-option input[type="text"] {
+  border: none !important;
+  outline: none !important;
+  padding-left: 5px;
+  width: 90%;
+}
+/* date/time option styling  */
+
+.body-content .form-content .form-container .input .date-option input,
+.body-content .form-content .form-container .input .time-option input {
+  width: 175px;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 2px solid #1f74c2;
+  background: #fff;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 1em;
+  appearance: none;
+}
+
+/* file upload option styling  */
+.body-content .form-content .form-container .input .file-upload {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  width: 50%;
+  margin-top: 20px;
+}
+.body-content .form-content .form-container .input .file-upload .file-select {
+  display: block;
+  border: 2px solid #1f74c2;
+  color: #1f74c2;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.body-content .form-content .form-container .input .file-upload .file-select .file-select-button {
+  background: #1f74c2;
+  color: white;
+  padding: 0 10px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+.body-content .form-content .form-container .input .file-upload .file-select .file-select-name {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.body-content .form-content .form-container .input .file-upload .file-select input[type="file"] {
+  z-index: 100;
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled {
+  opacity: 0.65;
+}
+.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled:hover {
+  cursor: default;
+  display: block;
+  border: 2px solid #dce4ec;
+  color: #34495e;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 5px;
+  text-align: left;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled:hover .file-select-button {
+  background: #dce4ec;
+  color: #666;
+  padding: 0 10px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled:hover .file-select-name {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* styling bottom area of the form-container  */
 .body-content .form-content .form-container .bottom-section {
   position: absolute;
   width: 100%;
@@ -257,6 +423,7 @@ nav .toggle .nav-link.active a {
   border-color: #1f74c2;
 }
 
+/* add content box styling  */
 .body-content .add-content-container {
   display: flex;
   justify-content: center;
@@ -308,4 +475,63 @@ nav .toggle .nav-link.active a {
 }
 .body-content .add-content .addQuestion:hover .add-options {
   display: block;
+}
+
+/* media queries  */
+
+@media (max-width: 1050px) {
+  .body-content {
+    width: 55rem;
+  }
+}
+
+@media (max-width: 975px) {
+  .body-content {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .body-content {
+    width: 40rem;
+  }
+  .body-content .form-content .form-container.w-100 .text-box {
+    width: 60%;
+  }
+}
+
+@media (max-width: 767px) {
+  .body-content {
+    width: 35rem;
+  }
+  .body-content .form-content .form-container.w-50 {
+    width: 100%;
+  }
+  .body-content .add-content {
+    width: 70%;
+  }
+}
+@media (max-width: 650px) {
+  .body-content {
+    width: 30rem;
+  }
+}
+@media (max-width: 550px) {
+  .body-content {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .body-content {
+    width: 22rem;
+  }
+  .body-content .add-content {
+    width: 100%;
+  }
+}
+@media (max-width: 395px) {
+  .body-content {
+    width: 19rem;
+  }
 }
