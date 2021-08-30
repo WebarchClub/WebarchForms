@@ -37,8 +37,15 @@ $(document).ready(function () {
           </select>
       </div>
       <div class="text-box">
+        <div class="question-img"></div>  
+
+        <div class="question-section">
           <textarea placeholder="Enter question"></textarea>
-          <i class="fas fa-photo-video textarea-icon"></i>
+          <div class="question-image">
+            <input type="file" name="question-image" class="input-question" accept="image/*" />
+            <label for="question-image"><i class="fas fa-photo-video textarea-icon"></i></label>
+          </div>
+        </div>
       </div>
       </div>
       <div class="input">
@@ -84,8 +91,14 @@ $(document).ready(function () {
         </select>
     </div>
     <div class="text-box">
+      <div class="question-img"></div>
+      <div class="question-section">
         <textarea placeholder="Enter question"></textarea>
-        <i class="fas fa-photo-video textarea-icon"></i>
+        <div class="question-image">
+          <input type="file" name="question-image" class="input-question" accept="image/*" />
+          <label for="question-image"><i class="fas fa-photo-video textarea-icon"></i></label>
+        </div>
+      </div>
     </div>
     </div>
     <div class="input">
@@ -116,13 +129,29 @@ $(document).ready(function () {
     </div>
 </div>
 `;
+  const titleSection = `
+  <div class="titleDescription addSection">
+    <div class="input-title">
+      <input type="text" placeholder="Title" />
+      <span class="icons">
+        <i class="far fa-copy copyTitle"></i>
+        <i class="far fa-trash deleteTitle"></i>
+      </span>
+    </div>
+    <div class="input-description">
+      <input type="text" placeholder="Description" />
+    </div>
+  </div>
+  `;
 
   addQuestionList.click(function () {
     formContainer.append(list);
     handleLayout();
+    handleQuestionImage();
   });
   addQuestionGrid.click(function () {
     formContainer.append(grid);
+    handleQuestionImage();
   });
 
   // delete question
@@ -180,19 +209,7 @@ $(document).ready(function () {
     }
     $(this).parent().remove();
   });
-  //file upload handling
-  // for (let i = 0; i < $(".chooseFile").length; i++) {
-  //   const el = $(".chooseFile")[i];
-  //   $(el).on("change", function () {
-  //     const filename = $(el).val();
-  //     console.log(filename);
-  //     if (/^\s*$/.test(filename)) {
-  //       $(".noFile").text("No file chosen...");
-  //     } else {
-  //       $($(el).siblings()[1]).text(filename.replace("C:\\fakepath\\", ""));
-  //     }
-  //   });
-  // }
+
   // all available options
   const mcqOption = `
   <div class="mcq-option">
@@ -247,7 +264,7 @@ $(document).ready(function () {
       <div class="file-select">
         <div class="file-select-button fileName">Choose File</div>
         <div class="file-select-name noFile">No file chosen...</div>
-        <input type="file" name="chooseFile" class="chooseFile" />
+        <input type="file" name="chooseFile" class="chooseFile" onchange="handleChange(this)"/>
       </div>
     </div>
   `;
@@ -281,4 +298,183 @@ $(document).ready(function () {
         return;
     }
   });
+
+  // add new section
+  $(".addNewSection").click(function () {
+    formContainer.append(
+      `<div class="new-section">
+          <div class="section-id">Section <span class="current">-</span> of <span class="total">-</span></div>
+          <div class="section-title">
+            <input type="text" placeholder="Section Title" />
+            <span class="actions">
+              <i class="far fa-copy copySection"></i>
+              <i class="far fa-trash deleteSection"></i>
+            </span>
+          </div>
+          <div class="section-description">
+            <textarea placeholder="Description"></textarea>
+          </div>
+        </div>
+        `
+    );
+    handleSectionIndex();
+  });
+  const handleSectionIndex = () => {
+    const total = $(".total").length;
+    const sections = $(".new-section");
+    sections.each((i, index) => {
+      $($(index).children()[0]).children()[0].innerHTML = i + 1;
+      $($(index).children()[0]).children()[1].innerHTML = total;
+    });
+  };
+  $(document).on("click", ".deleteSection", function () {
+    $(this).parents(".new-section")[0].remove();
+    handleSectionIndex();
+  });
+  $(document).on("click", ".copySection", function () {
+    $(this).parents(".new-section").clone().insertAfter($(this).parents(".new-section"));
+    handleSectionIndex();
+  });
+  // add title section
+  $(".addTitle").click(function () {
+    formContainer.append(titleSection);
+  });
+  $(document).on("click", ".deleteTitle", function () {
+    $(this).parents(".titleDescription")[0].remove();
+  });
+  $(document).on("click", ".copyTitle", function () {
+    $(this).parents(".titleDescription").clone().insertAfter($(this).parents(".titleDescription"));
+  });
+
+  // image section upload
+  const inputImage = document.getElementById("actual-btn");
+  const fileChosen = document.getElementById("file-chosen");
+  let uploadedFile;
+  let imageSection;
+  $(".addImageSection").click(function () {
+    $(".overlay").css("display", "flex");
+    inputImage.addEventListener("change", function () {
+      fileChosen.textContent = this.files[0].name;
+      uploadedFile = URL.createObjectURL(inputImage.files[0]);
+      imageSection = `
+      <div class="imageSection addSection">
+        <div class="input-title">
+          <input type="text" placeholder="Image Title" />
+          <span class="icons">
+            <i class="far fa-copy copyImage"></i>
+            <i class="far fa-trash deleteImage"></i>
+          </span>
+        </div>
+        <div class="image">
+          <img src="${uploadedFile}" alt="img" />
+        </div>
+      </div>
+      `;
+      $("#modal-img").attr("src", uploadedFile);
+      $("#modal-img").css("display", "inline");
+    });
+  });
+  $(".proceed").click(function () {
+    if (imageSection) {
+      formContainer.append(imageSection);
+      $(".overlay").hide(100);
+      $("#modal-img").attr("src", "");
+      $("#modal-img").css("display", "none");
+      fileChosen.textContent = "No file chosen";
+    } else {
+      alert("Please choose an image");
+    }
+  });
+  $(".cancel").click(function () {
+    $(".overlay").hide(100);
+    $("#modal-img").attr("src", "");
+    $("#modal-img").css("display", "none");
+    fileChosen.textContent = "No file chosen";
+  });
+  $(document).on("click", ".deleteImage", function () {
+    $(this).parents(".imageSection")[0].remove();
+  });
+  $(document).on("click", ".copyImage", function () {
+    $(this).parents(".imageSection").clone().insertAfter($(this).parents(".imageSection"));
+  });
+
+  // video section upload
+  const inputVideo = document.getElementById("file-input");
+  const videoSource = document.createElement("source");
+  const video = document.getElementById("video");
+  const videoChosen = document.getElementById("video-chosen");
+  $(".addVideoSection").click(function () {
+    $(".overlay-video").css("display", "flex");
+  });
+  inputVideo.addEventListener("change", function () {
+    const files = this.files || [];
+    if (!files.length) return;
+    videoChosen.innerHTML = files[0].name;
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      // videoSource.setAttribute("src", e.target.result);
+      formContainer.append(
+        `
+        <div class="video-section">
+        <div class="input-video">
+          <input type="text" placeholder="Video Title" />
+          <span class="videoOptions">
+            <i class="far fa-copy copyVideo"></i>
+            <i class="far fa-trash deleteVideo"></i>
+          </span>
+        </div>
+        <div class="video">
+          <video id="video" src=${e.target.result} controls></video>
+        </div>
+      </div>
+        `
+      );
+      video.appendChild(videoSource);
+      video.load();
+      video.play();
+    };
+
+    reader.onprogress = function (e) {
+      console.log("progress: ", Math.round((e.loaded * 100) / e.total));
+    };
+
+    reader.readAsDataURL(files[0]);
+  });
+  $(".proceedVideo").click(function () {
+    $(".overlay-video").hide(100);
+    videoChosen.textContent = "No file chosen";
+  });
+  $(".cancelVideo").click(function () {
+    $(".overlay-video").hide(100);
+    videoChosen.textContent = "No file chosen";
+  });
+  $(document).on("click", ".deleteVideo", function () {
+    $(this).parents(".video-section")[0].remove();
+  });
+  $(document).on("click", ".copyVideo", function () {
+    $(this).parents(".video-section").clone().insertAfter($(this).parents(".video-section"));
+  });
+
+  $(document).on("click", ".removeQuestionImage", function () {
+    console.log($(this).parents(".form-container"));
+    $(this).parents(".form-container").css("height", `330px`);
+    $(this).parent().empty();
+  });
+  const handleQuestionImage = () => {
+    $(".input-question").each(function (key, element) {
+      $(element).on("change", function () {
+        let questionImage = URL.createObjectURL(this.files[0]);
+        $($(this).parents(".question-section").siblings()[0]).empty();
+        $($(this).parents(".question-section").siblings()[0]).append(
+          `
+          <img src="${questionImage}" alt="" />
+          <i class="far fa-times removeQuestionImage"></i>
+          `
+        );
+        $(this).parents(".form-container").css("height", `400px`);
+      });
+    });
+  };
+  handleQuestionImage();
 });

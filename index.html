@@ -12,6 +12,17 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <script>
+      function handleChange(x) {
+        const uploadedFile = x;
+        const filename = uploadedFile.files[0].name;
+        if (!/^\s*$/.test(filename)) {
+          uploadedFile.previousSibling.previousElementSibling.innerHTML = filename;
+        }
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav>
@@ -62,8 +73,14 @@
               </select>
             </div>
             <div class="text-box">
-              <textarea placeholder="Enter question"></textarea>
-              <i class="fas fa-photo-video textarea-icon"></i>
+              <div class="question-img"></div>
+              <div class="question-section">
+                <textarea placeholder="Enter question"></textarea>
+                <div class="question-image">
+                  <input type="file" name="question-image" class="input-question" accept="image/*" />
+                  <label for="question-image"><i class="fas fa-photo-video textarea-icon"></i></label>
+                </div>
+              </div>
             </div>
           </div>
           <div class="input">
@@ -92,6 +109,7 @@
             </span>
           </div>
         </div>
+
         <!-- end of form-container -->
       </div>
 
@@ -106,24 +124,50 @@
                 <li class="addQuestionList">List</li>
               </ul>
             </div>
-            <div class="option">
+            <div class="option addTitle">
               <i class="fas fa-paragraph"></i>
             </div>
-            <div class="option">
-              <i class="fas fa-photo-video"></i>
-            </div>
-            <div class="option">
+            <div class="option addImageSection">
               <i class="fas fa-file-image"></i>
             </div>
-            <div class="option">
-              <i class="fas fa-file-import"></i>
+            <div class="option addVideoSection">
+              <i class="fas fa-photo-video"></i>
+            </div>
+            <div class="option addNewSection">
+              <!-- <i class="fas fa-file-import"></i> -->
+              <i class="fas fa-grip-lines"></i>
             </div>
           </div>
         </div>
       </div>
       <!-- end of add-content  -->
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <div class="overlay">
+      <div class="modal-inputFile">
+        <input type="file" id="actual-btn" hidden accept="image/*" />
+        <div class="modal-body">
+          <img src="" alt="img" id="modal-img" />
+          <p class="file-chosen" id="file-chosen">No file chosen</p>
+          <label for="actual-btn">Choose</label>
+        </div>
+        <div class="modal-buttons">
+          <button class="cancel">Cancel</button>
+          <button class="proceed">Proceed</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-video">
+      <div class="modal-video">
+        <input id="file-input" type="file" accept="video/*" hidden />
+        <div class="modal-body">
+          <p class="file-chosen" id="video-chosen">No file chosen</p>
+          <label for="file-input">Choose</label>
+        </div>
+        <div class="modal-buttons">
+          <button class="cancelVideo">Cancel</button>
+          <button class="proceedVideo">Proceed</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

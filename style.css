@@ -129,7 +129,67 @@ nav .toggle .nav-link.active a {
 .body-content .form-content .form-container.w-50 {
   width: 48%;
 }
-
+/* new section  */
+.body-content .form-content .new-section {
+  width: 100%;
+  position: relative;
+  height: 150px;
+  border: 2px solid #1f74c2;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 35px;
+}
+.body-content .form-content .new-section .section-id {
+  position: absolute;
+  top: -38px;
+  left: 0;
+  padding: 10px 10px;
+  background-color: #1f74c2;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  font-size: 15px;
+}
+.body-content .form-content .new-section textarea {
+  position: relative;
+  top: -10px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #1f74c2;
+  background-color: #f1f8ff;
+  height: 40px;
+  padding: 10px;
+  font-size: 13px;
+}
+.body-content .form-content .section-title {
+  position: relative;
+  top: -10px;
+  width: 100%;
+  padding: 10px 0;
+}
+.body-content .form-content .new-section .actions {
+  width: 14%;
+  display: inline-flex;
+  justify-content: space-around;
+}
+.body-content .form-content .new-section .actions i {
+  font-size: 20px;
+  color: #1f74c2;
+  cursor: pointer;
+}
+.body-content .form-content .section-title input[type="text"] {
+  width: 85%;
+  border: none !important;
+  background-color: #f1f8ff;
+  outline: none !important;
+  padding: 10px;
+  padding-left: 5px;
+  font-size: 25px;
+  transition: border 0.1s;
+}
+.body-content .form-content .section-title input[type="text"]:not(:placeholder-shown) {
+  font-weight: 600;
+  border-bottom: 2px solid #1f74c2 !important;
+}
 /* select option styling  */
 .body-content .form-content .form-container .select-box {
   position: relative;
@@ -168,16 +228,53 @@ nav .toggle .nav-link.active a {
 .body-content .form-content .form-container .text-box {
   position: relative;
 }
+.body-content .form-content .form-container .question-section {
+  position: relative;
+}
 .body-content .form-content .form-container.w-100 .text-box {
   width: 70%;
 }
 
-.body-content .form-content .form-container .text-box .textarea-icon {
+.body-content .form-content .form-container .text-box .question-image {
   position: absolute;
   top: 18px;
   right: 10px;
   color: #1f74c2;
   cursor: pointer;
+}
+.body-content .form-content .form-container .text-box .question-img {
+  position: relative;
+}
+.body-content .form-content .form-container .text-box .question-img i {
+  position: absolute;
+  top: 0;
+  background: #1f74c2;
+  padding: 2px 4px;
+  cursor: pointer;
+  color: white;
+  border-radius: 100%;
+}
+.body-content .form-content .form-container.w-100 .text-box .question-img img {
+  max-width: 550px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+}
+.body-content .form-content .form-container.w-50 .text-box .question-img img {
+  max-width: 430px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+}
+/* question image upload */
+.body-content .form-content .form-container .text-box input[type="file"] {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 999;
 }
 
 /* mcq option styling  */
@@ -394,7 +491,7 @@ nav .toggle .nav-link.active a {
   appearance: none;
   cursor: pointer;
   width: 25px;
-  height: 16px;
+  height: 15px;
   border: 1px solid #000;
   border-radius: 20px;
   position: relative;
@@ -407,7 +504,7 @@ nav .toggle .nav-link.active a {
   position: absolute;
   left: 1px;
   top: 1px;
-  height: 10px;
+  height: 9px;
   width: 10px;
   border-radius: 50%;
   border: 1px solid black;
@@ -476,7 +573,188 @@ nav .toggle .nav-link.active a {
 .body-content .add-content .addQuestion:hover .add-options {
   display: block;
 }
+/* image section  */
+.body-content .form-content .imageSection {
+  position: relative;
+  height: 370px;
+  width: 100%;
+  border: 2px solid #1f74c2;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.body-content .form-content .imageSection .image {
+  display: flex;
+  justify-content: center;
+}
+.body-content .form-content .imageSection img {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  margin: 5px 0;
+}
+/* title & description box   */
+.body-content .form-content .titleDescription {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  border: 2px solid #1f74c2;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.body-content .form-content .addSection .input-title {
+  position: relative;
+}
+.body-content .form-content .addSection input {
+  width: 100%;
+  border: none;
+  background-color: #f1f8ff;
+  margin: 5px 0;
+  padding: 12px 10px;
+}
+.body-content .form-content .addSection .input-title input {
+  border-bottom: 2px solid #1f74c2;
+  width: 85%;
+}
+.body-content .form-content .addSection .icons {
+  width: 14%;
+  display: inline-flex;
+  justify-content: center;
+  gap: 25%;
+  color: #1f74c2;
+}
+.body-content .form-content .addSection .icons i {
+  font-size: 20px;
+  cursor: pointer;
+}
 
+/* video section  */
+.body-content .video-section {
+  height: 390px;
+  border: 2px solid #1f74c2;
+  padding: 5px 20px;
+  width: 100%;
+  border-radius: 5px;
+}
+.body-content .input-video {
+  width: 100%;
+  padding: 5px 10px;
+}
+.body-content .input-video input {
+  border: none;
+  border-bottom: 2px solid #1f74c2;
+  padding: 12px 10px;
+  width: 85%;
+}
+.body-content .input-video .videoOptions {
+  width: 14%;
+  display: inline-flex;
+  justify-content: center;
+  gap: 25%;
+  color: #1f74c2;
+}
+.body-content .input-video .videoOptions i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.body-content .video {
+  display: flex;
+  justify-content: center;
+}
+.body-content .video video {
+  position: relative;
+  top: 10px;
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  margin: 5px 0;
+}
+
+/* overlay file upload modal  */
+.overlay,
+.overlay-video {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.overlay .modal-inputFile,
+.overlay-video .modal-video {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+.overlay .modal-body label,
+.overlay-video .modal-body label {
+  position: relative;
+  top: -15px;
+  background-color: #ffd700;
+  color: black;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.overlay .modal-body,
+.overlay-video .modal-body {
+  text-align: center;
+}
+.overlay .modal-buttons,
+.overlay-video .modal-buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.overlay button,
+.overlay-video button {
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.overlay button:hover,
+.overlay-video button:hover {
+  opacity: 1;
+}
+.overlay .proceed,
+.overlay-video .proceedVideo {
+  background: #1f74c2;
+}
+.overlay .cancel,
+.overlay-video .cancelVideo {
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: 5px;
+}
+.overlay .file-chosen,
+.overlay-video .file-chosen {
+  position: relative;
+  top: -20px;
+  font-size: 14px;
+}
+.overlay #modal-img {
+  display: none;
+  position: relative;
+  top: -20px;
+  height: 100px;
+  width: auto;
+  max-width: 200px;
+  border-radius: 5px;
+}
 /* media queries  */
 
 @media (max-width: 1050px) {
