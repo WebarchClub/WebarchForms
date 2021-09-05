@@ -13,6 +13,8 @@
       crossorigin="anonymous"
     />
     <script>
+      var data = "<%-id%>";
+      console.log(data);
       function handleChange(x) {
         const uploadedFile = x;
         const filename = uploadedFile.files[0].name;
@@ -21,6 +23,7 @@
         }
       }
     </script>
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       defer
@@ -42,8 +45,7 @@
           <i class="fas fa-th-large box"></i>
           <button
             type="button"
-            class="btn btn-primary"
-            onclick="publish()"
+            class="btn btn-primary publish"
             class="btn btn-yellow"
           >
             Publish
@@ -65,7 +67,12 @@
       </div>
       <!-- description  -->
       <div class="description">
-        <input type="text" name="description" placeholder="Enter Description" />
+        <input
+          type="text"
+          name="description"
+          class="titleDesc"
+          placeholder="Enter Description"
+        />
       </div>
       <!-- description end -->
 
@@ -119,7 +126,7 @@
             </div>
           </div>
           <div class="bottom-section">
-            <span class="child">
+            <span class="child first">
               <span class="required">Required</span>
               <input type="checkbox" />
             </span>
@@ -190,5 +197,6 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>

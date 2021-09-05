@@ -7,6 +7,9 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const router = require("./routes");
+const multer = require("multer");
+
+const upload = multer();
 // Loading env variables
 dotenv.config();
 
