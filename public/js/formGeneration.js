@@ -773,22 +773,23 @@ $(document).ready(function () {
     setSectionNumber();
     console.log(mainArr);
     console.log(files);
-    var formData = new FormData();
+    var data = new FormData();
     for (var file of files) {
       console.log(file);
-      formData.append("file", file);
+      data.append("formData", file);
     }
-    test = formData;
-    console.log(JSON.stringify(test.getAll("file")));
+    test = data;
+    console.log(JSON.stringify(test.getAll("formData")));
     // formData.append("file", files);
     // console.log(formData);
     try {
-      // const config = {
-      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // };
-      const response = await axios.post(`/generation/${data}`, {
-        formData,
-      });
+      const config = {
+        method: "POST",
+        url: `/generation/${data}`,
+        headers: { "Content-Type": "multipart/form-data" },
+        data: data
+      };
+      const response = await axios(config);
     } catch (err) {
       console.log(err);
     }

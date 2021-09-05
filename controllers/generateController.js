@@ -11,4 +11,5 @@ module.exports.generate_post = (req, res) => {
   // req.body.formData.forEach(function (val) {
   //   console.log(val.name);
   // });
+  res.send("OK")
 };
