@@ -1,3 +1,6 @@
+var mainArr = [];
+var files = [];
+var test;
 const handleLayout = () => {
   const width = $(window).width();
   if (width < 751) {
@@ -16,18 +19,261 @@ $(window).resize(function () {
 
 const setSectionNumber = () => {
   let fcs = $(".form-block");
+  var arr = [];
+  var imgArr = [];
+  var tit = {};
+  tit.title = $('input[class="title"]').val();
+  tit.titleDesc = $('input[class="titleDesc"]').val();
+
+  arr.push(tit);
+
   [...fcs].forEach((fc, fcIdx) => {
     let isSection = $(fc).hasClass("new-section");
+    let isGrid = $(fc).hasClass("grid");
+    let isList = $(fc).hasClass("list");
     if (isSection) {
       let sectionNumber = Number($(fc).find(".current").text().trim());
+      console.log($(fc).children());
+
+      var obj = {};
+      if (isGrid) {
+        obj.grid = true;
+      }
+      if (isList) {
+        obj.list = true;
+      }
+      obj.sectionNumber = sectionNumber;
+      obj.question = $(fc)
+        .children(".form-header")
+        .children(".text-box")
+        .children(".question-section")
+        .children("textarea")
+        .val();
+
+      // type
+      obj.type = $(fc)
+        .children(".form-header")
+        .children(".select-box")
+        .children("select")
+        .val();
+
+      //image
+      // const image;
+      $(fc)
+        .children(".form-header")
+        .children(".text-box")
+        .children(".question-section")
+        .children(".question-image")
+        .children("input")
+        .each(function () {
+          obj.file = $(this)[0].files[0];
+        });
+      if (obj.file) {
+        imgArr.push(obj.file);
+      }
+      //mcq values
+      var ans1 = [];
+      $(fc)
+        .children(".input")
+        .children(".mcq-option")
+        .children(".mcqs")
+        .children(".option")
+        .map((index, val) => {
+          var obje2 = {};
+          obje2.radioCheck = $(val)
+            .children('input[type="radio"]')
+            .is(":checked");
+          obje2.radioVal = $(val).children('input[type="text"]').val();
+          ans1.push(obje2);
+        });
+      obj.mcq = ans1;
+      obj.short = $(fc)
+        .children(".input")
+        .children(".short-option")
+        .children('input[type="text"]')
+        .val();
+
+      obj.para = $(fc)
+        .children(".input")
+        .children(".para-option")
+        .children("textarea")
+        .val();
+
+      obj.date = $(fc)
+        .children(".input")
+        .children(".date-option")
+        .children('input[type="date"]')
+        .val();
+
+      obj.time = $(fc)
+        .children(".input")
+        .children(".time-option")
+        .children('input[type="time"]')
+        .val();
+      //required checking
+      obj.required = $(fc)
+        .children(".bottom-section")
+        .children(".first")
+        .children('input[type="checkbox"]')
+        .val();
+
+      var checkBox = [];
+      $(fc)
+        .children(".input")
+        .children(".checkbox-option")
+        .children(".check-options")
+        .children(".option")
+        .map((index, val) => {
+          var object1 = {};
+          object1.checkBox = $(val)
+            .children('input[type="checkbox"]')
+            .is(":checked");
+          object1.checkBoxVal = $(val).children('input[type="text"]').val();
+          checkBox.push(object1);
+        });
+      obj.checkB = checkBox;
+
+      if ($(fc).hasClass("addSection")) {
+        obj.sectionTitle = $(fc)
+          .children(".input-title")
+          .children("input[type='text']")
+          .val();
+        obj.titleDescription = $(fc)
+          .children(".input-description")
+          .children("input[type='text']")
+          .val();
+      }
+
+      arr.push(obj);
       $(fc).addClass(`section-${sectionNumber}`);
     } else {
       let sectionNumber = Number(
         $(fc).prevAll(".new-section").first().find(".current").text().trim()
       );
+      //got question
+
+      var obj = {};
+      if (isGrid) {
+        obj.grid = true;
+      }
+      if (isList) {
+        obj.list = true;
+      }
+      obj.sectionNumber = sectionNumber;
+      obj.question = $(fc)
+        .children(".form-header")
+        .children(".text-box")
+        .children(".question-section")
+        .children("textarea")
+        .val();
+
+      // type
+      obj.type = $(fc)
+        .children(".form-header")
+        .children(".select-box")
+        .children("select")
+        .val();
+
+      //image
+      // const image;
+      $(fc)
+        .children(".form-header")
+        .children(".text-box")
+        .children(".question-section")
+        .children(".question-image")
+        .children("input")
+        .each(function () {
+          obj.file = $(this)[0].files[0];
+        });
+
+      if (obj.file) {
+        imgArr.push(obj.file);
+        obj.filename = obj.file.name;
+        console.log(obj.file.name);
+      }
+      //mcq values
+      var ans1 = [];
+      $(fc)
+        .children(".input")
+        .children(".mcq-option")
+        .children(".mcqs")
+        .children(".option")
+        .map((index, val) => {
+          var obje2 = {};
+          obje2.radioCheck = $(val)
+            .children('input[type="radio"]')
+            .is(":checked");
+          obje2.radioVal = $(val).children('input[type="text"]').val();
+          ans1.push(obje2);
+        });
+      obj.mcq = ans1;
+      obj.short = $(fc)
+        .children(".input")
+        .children(".short-option")
+        .children('input[type="text"]')
+        .val();
+
+      obj.para = $(fc)
+        .children(".input")
+        .children(".para-option")
+        .children("textarea")
+        .val();
+
+      obj.date = $(fc)
+        .children(".input")
+        .children(".date-option")
+        .children('input[type="date"]')
+        .val();
+
+      obj.time = $(fc)
+        .children(".input")
+        .children(".time-option")
+        .children('input[type="time"]')
+        .val();
+      obj.required = $(fc)
+        .children(".bottom-section")
+        .children(".first")
+        .children('input[type="checkbox"]')
+        .is(":checked");
+
+      var checkBox = [];
+      $(fc)
+        .children(".input")
+        .children(".checkbox-option")
+        .children(".check-options")
+        .children(".option")
+        .map((index, val) => {
+          var object1 = {};
+          object1.checkBox = $(val)
+            .children('input[type="checkbox"]')
+            .is(":checked");
+          object1.checkBoxVal = $(val).children('input[type="text"]').val();
+          checkBox.push(object1);
+        });
+      obj.checkB = checkBox;
+      if ($(fc).hasClass("addSection")) {
+        obj.sectionTitle = $(fc)
+          .children(".input-title")
+          .children("input[type='text']")
+          .val();
+        obj.titleDescription = $(fc)
+          .children(".input-description")
+          .children("input[type='text']")
+          .val();
+      }
+
+      arr.push(obj);
+      // console.log(arr);
+      // question - image;
       $(fc).addClass(`section-${sectionNumber}`);
     }
   });
+  mainArr = arr;
+  files = imgArr;
+
+  console.log(data);
+  console.log(mainArr);
+  console.log(files);
 };
 $(document).ready(function () {
   setSectionNumber();
@@ -117,6 +363,7 @@ $(document).ready(function () {
           </div>
         </div>
       </div>
+
       </div>
       <div class="input">
         <div class="mcq-option">
@@ -258,6 +505,7 @@ $(document).ready(function () {
       <textarea placeholder="Your Answer"></textarea>
     </div>
     `;
+  //
   const checkboxOption = `
       <div class="checkbox-option">
         <div class="check-options">
@@ -283,6 +531,7 @@ $(document).ready(function () {
         <input id="input-time" type="time" value="00:00:01" />
       </div>
     `;
+  //
   const fileUploadOption = `
       <div class="file-upload">
         <div class="file-select">
@@ -496,7 +745,9 @@ $(document).ready(function () {
       .clone()
       .insertAfter($(this).parents(".video-section"));
   });
-
+  $(document).on("click", ".publish", function () {
+    publish();
+  });
   $(document).on("click", ".removeQuestionImage", function () {
     console.log($(this).parents(".form-container"));
     $(this).parents(".form-container").css("height", `330px`);
@@ -519,22 +770,25 @@ $(document).ready(function () {
   };
   handleQuestionImage();
   const publish = async () => {
+    setSectionNumber();
+    console.log(mainArr);
+    console.log(files);
+    var formData = new FormData();
+    for (var file of files) {
+      console.log(file);
+      formData.append("file", file);
+    }
+    test = formData;
+    console.log(JSON.stringify(test.getAll("file")));
+    // formData.append("file", files);
+    // console.log(formData);
     try {
-      const res = await fetch("/generation/<%=id%>", {
-        method: "POST",
-        body: JSON.stringify(formContainer),
-        headers: { "Content-Type": "application/json" },
+      // const config = {
+      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      // };
+      const response = await axios.post(`/generation/${data}`, {
+        formData,
       });
-      const data = await res.json();
-      console.log(data);
-      // if (data.errors) {
-      //   emailError.textContent = data.errors.email;
-      //   passwordError.textContent = data.errors.password;
-      // }
-      // console.log("Your data" + data.user);
-      if (data) {
-        location.assign("/generation/<%=id%>");
-      }
     } catch (err) {
       console.log(err);
     }
