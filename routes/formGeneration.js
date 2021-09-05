@@ -12,10 +12,12 @@ const Storage = multer.diskStorage({
 
 var upload = multer({
   storage: Storage,
-}).array("file", 12);
+});
+
+var uploadMultiple = upload.fields([{name: "formData", maxCount: 20}]);
 
 router.get("/generation/:id", generateController.generate_get);
-router.post("/generation/:id", upload, generateController.generate_post);
+router.post("/generation/:id", uploadMultiple, generateController.generate_post);
 // checkUser,
 
 module.exports = router;
