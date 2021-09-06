@@ -1,344 +1,439 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Texturina:wght@100&family=Ubuntu:wght@300&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-/* animation  */
+/* animations  */
 
 .grow {
-  transition: all 0.8s ease-in-out;
+	transition: all 0.2s ease-in-out !important;
 }
 
 .grow:hover {
-  transform: scale(1.1);
+	transform: scale(1.1) !important;
 }
 
-/* navbar css start---------------- */
-
-* {
-  box-sizing: border-box !important;
+.rotate {
+	transition: transform 0.5s ease-in-out;
 }
 
-/* The side navigation menu */
-
-.sidenav {
-  height: 100%;
-  /* 100% Full-height */
-  width: 0;
-  /* 0 width - change this with JavaScript */
-  position: fixed;
-  /* Stay in place */
-  z-index: 10;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: rgb(0, 0, 0);
-  /* Black*/
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 60px;
-  /* Place content 60px from the top */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */
+.rotate:hover {
+	transform: rotate(360deg);
 }
 
-/* The navigation menu links */
+/* scrollbar start  */
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #d1d1d1;
-  display: block;
-  transition: 0.3s;
+::-webkit-scrollbar {
+	width: 8px;
+	height: 5px;
 }
 
-/* When you mouse over the navigation links, change their color */
-
-.sidenav a:hover {
-  color: #ffffff;
+.middle {
+	position: relative;
 }
 
-/* Position and style the close button (top right corner) */
-
-#nav-bars {
-  position: absolute;
-  left: 20px;
-  top: 10px;
-  font-size: 20px;
-  color: white;
-  z-index: 100;
+.middle:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: rgb(255, 255, 255);
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all 0.3s ease-in-out;
 }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.middle:hover:before {
+	visibility: visible;
+	transform: scaleX(1);
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/* Track */
 
-#main {
-  transition: margin-left 0.5s;
-  padding: 20px;
+::-webkit-scrollbar-track {
+	background: #00222d;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* Handle */
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
+::-webkit-scrollbar-thumb {
+	background: #337d96;
 }
 
-/* navbar css end ------------------ */
+/* Handle on hover */
 
-/* ********Utilities Classes******** */
-
-.customfontbaloo {
-  font-family: "Baloo Bhaina 2", sans-serif;
+::-webkit-scrollbar-thumb:hover {
+	background: #bebebe;
 }
 
-.customfontubuntu {
-  font-family: "Ubuntu", sans-serif;
+/* scrollbar end  */
+
+html {
+	font-size: 100%;
 }
 
-.customfonttexturina {
-  font-family: "Texturina", serif;
+section {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 0.6fr 1.2fr;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.navbar {
+	display: none;
 }
 
-body {
-  background-color: black;
-  font-family: "Baloo Bhaina 2", sans-serif;
+.home-btn-desktop {
+	color: white !important;
+	position: absolute;
+	top: 5px;
+	left: 5px;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 90vh;
-  background-color: #ececec;
-  overflow: hidden;
-  border-radius: 15px;
-  margin-top: 3%;
+.home-btn-desktop:hover {
+	color: black !important;
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  width: 2000px;
-  height: 2000px;
-  background: linear-gradient(60deg, #170a46, #130849);
-  right: 39%;
-  top: -10%;
-  border-top-right-radius: 50%;
+.navbar a {
+	color: white !important;
 }
 
-.form-cont {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.nav-logo {
+	display: none;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.logo {
+	background-image: linear-gradient(to top, #01afc5 0%, #2e5ac2 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.logo .logo-box {
+	background-color: #fff;
+	width: 30rem;
+	text-align: center;
+	border-radius: 2rem;
+	padding: 2rem;
+	box-shadow: 0 0 2.3rem #005081;
 }
 
-form.register {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  width: 50%;
-  z-index: 2;
+.logo .logo-box img {
+	width: 35%;
+	margin-bottom: 1.4rem;
 }
 
-.desk-img {
-  display: flex;
-  width: 400px;
-  height: 330px;
-  transform: translate(40px, 220px);
+.logo-mobile {
+	display: none;
 }
 
-.reg-heading {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #17094c;
-  margin-bottom: 10px;
+.com-heading {
+	display: none;
 }
 
-img {
-  height: 50px;
+.com-para {
+	display: none;
+}
+.link {
+	background-color: #fff;
+	margin-top: 3rem;
+	padding: 1rem;
+	width: 30rem;
+	text-align: center;
+	border-radius: 10px;
 }
 
-.form-input {
-  max-width: 320px;
-  width: 100%;
-  height: 55px;
-  background-color: #f0f0f0;
-  margin: 7px 0;
-  border-radius: 55px;
-  padding: 0 0.4rem 0.4rem 0.4rem;
+.link a {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
 }
 
-.form-input i {
-  text-align: center;
-  line-height: 55px;
-  color: #17094c;
-  font-size: 1.1rem;
+.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.form-input input {
-  background: none;
-  outline: none;
-  border: none;
-  line-height: 1;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #17094c;
+.login .form-container{
+	background-color: #fff;
+	width: 35rem;
+	padding: 2rem;
 }
 
-.form-input input::placeholder {
-  color: #aaa;
-  font-weight: 500;
+.login .form-container form input {
+	border: 2px solid #001c44;
 }
 
-.btn {
-  outline: none;
-  border: none;
-  width: 150px;
-  height: 49px;
-  border-radius: 49px;
-  cursor: pointer;
-  color: #ffffff;
-  background-color: #17094c;
-  font-weight: 600;
-  margin: 10px 0;
+.recoverPassword {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+.input:focus{
+	color:#001c44;
+}
+.password a {
+	color: black;
+	font-weight: bold;
 }
 
-.btn:hover {
-  color: rgb(207, 207, 207);
-}
-p.Or {
-  position: relative;
-  background: #ececec !important;
-  width: 30px;
-  text-align: center;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-p.Or::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 7px;
-  z-index: -1;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 1px;
-  background: #000;
-}
-.googlereg {
-  height: 30px;
-  width: 350px;
+.mybtn {
+	text-align: center;
 }
 
-.googlereg button {
-  cursor: pointer;
-  border-radius: 49px;
-  border: 1px solid #17094c;
-  background-color: lavender;
-  font-weight: 600;
-  text-align: center;
-  padding: 5px 15px;
-  font-size: 13px;
+.mybtn .btn-login {
+	width: 10rem;
 }
 
-.g-img {
-  position: relative;
-  right: 3px;
-  top: -1px;
-  width: 15px;
-  height: 15px;
-  border: none;
+.mybtn .btn-google {
+	width: 15rem;
 }
 
-@media (max-width: 1400px) {
-  .desk-img {
-    width: 300px;
-    height: 260px;
-  }
+.signUp {
+	text-align: center;
 }
 
-@media (max-width: 1200px) {
-  .desk-img {
-    width: 250px;
-    height: 220px;
-    transform: translate(40px, 250px);
-  }
-  .container::before {
-    right: 35%;
-    top: -25%;
-    border-top-right-radius: 52%;
-  }
+.signUp a {
+	color: blue;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
-@media (max-width: 994px) {
-  .desk-img {
-    width: 190px;
-    height: 170px;
-    transform: translateY(250px);
-  }
-  .container::before {
-    right: 35%;
-    top: -95%;
-    border-top-right-radius: 80%;
-  }
-  form.register {
-    position: absolute;
-    top: 8%;
-    left: 48%;
-    width: 52%;
-  }
+/* Media Queries  */
+
+@media screen and (max-width: 273px) {
+	.logo {
+		display: none;
+	}
+	.com-heading {
+		display: block;
+		text-align: center;
+		color: #2666c1;
+	}
+	.com-para {
+		display: block;
+		text-align: center;
+		color: #3b85c9;
+	}
+	.logo-mobile {
+		display: block;
+		justify-content: center;
+		width: 26%;
+		margin: 0 auto;
+	}
+	.logo-mobile img {
+		width: 55px;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.login {
+		width: 100%;
+	}
+	.login .form-container {
+		width: 100%;
+	}
+	.recoverPassword h1 {
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	.navbar {
+		display: block;
+		background-color: #00222d !important;
+		height: 55px;
+	}
+	.nav-logo {
+		display: block;
+		position: absolute;
+		top: 1px;
+		right: 10px;
+	}
+	.home-btn-desktop {
+		display: none;
+	}
 }
 
-@media (max-width: 768px) {
-  .container:before {
-    display: none;
-  }
-  .container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #ececec;
-    overflow: hidden;
-    border-radius: 15px;
-    margin-top: 0;
-  }
-  .desk-img {
-    display: none;
-  }
-  form.register {
-    width: 100%;
-    left: 0;
-  }
+@media (min-width: 273px) and (max-width: 342px) {
+	.logo {
+		display: none;
+	}
+	.logo-mobile {
+		display: block;
+		justify-content: center;
+		width: 20%;
+		margin: 0 auto;
+	}
+	.logo-mobile img {
+		width: 55px;
+	}
+	.com-heading {
+		display: block;
+		text-align: center;
+		color: #2666c1;
+	}
+	.com-para {
+		display: block;
+		text-align: center;
+		color: #3b85c9;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.login {
+		width: 100%;
+	}
+	.login .form-container {
+		width: 100%;
+	}
+	.recoverPassword h1 {
+		font-size: 25px;
+		margin-bottom: 0;
+	}
+	.navbar {
+		display: block;
+		background-color: #00222d !important;
+		height: 55px;
+	}
+	.navbar a {
+		color: white !important;
+	}
+	.nav-logo {
+		display: block;
+		position: absolute;
+		top: 1px;
+		right: 10px;
+	}
+	.home-btn-desktop {
+		display: none;
+	}
 }
 
-@media (max-width: 600px) {
-  #nav-bars {
-    color: black;
-  }
+@media (min-width: 342px) and (max-width: 673px) {
+	.logo {
+		display: none;
+	}
+	.logo-mobile {
+		display: block;
+		justify-content: center;
+		width: 5rem;
+		margin: 0 auto;
+	}
+	.logo-mobile img {
+		width: 75px;
+	}
+	.com-heading {
+		display: block;
+		text-align: center;
+		color: #2666c1;
+	}
+	.com-para {
+		display: block;
+		text-align: center;
+		color: #3b85c9;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.login {
+		width: 100%;
+	}
+	.login .form-container {
+		width: 100%;
+	}
+	.navbar {
+		display: block;
+		background-color: #00222d !important;
+		height: 55px;
+		color: white;
+	}
+	.navbar a {
+		color: white !important;
+	}
+	.nav-logo {
+		display: block;
+		position: absolute;
+		top: 1px;
+		right: 10px;
+	}
+	.home-btn-desktop {
+		display: none;
+	}
+}
+
+@media (min-width: 673px) and (max-width: 900px) {
+	.navbar a {
+		color: white !important;
+	}
+	.logo .logo-box {
+		width: 17rem;
+		margin: 0 1rem;
+	}
+	.link {
+		width: 17rem;
+	}
+	.logo-box h3 {
+		font-size: 13px;
+		font-weight: bold;
+	}
+	.logo-box p {
+		font-size: 9px;
+	}
+	html {
+		font-size: 95%;
+	}
+	.login .form-container {
+		width: 25rem;
+	}
+	.recoverPassword h1 {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+	.navbar a {
+		color: white !important;
+	}
+	.logo .logo-box {
+		width: 20rem;
+	}
+	.link {
+		width: 20rem;
+	}
+	.logo-box h3 {
+		font-size: 15px;
+		font-weight: bold;
+	}
+	.logo-box p {
+		font-size: 10px;
+	}
+}
+
+@media (min-width: 1000px) and (max-width: 1130px) {
+	.logo .logo-box {
+		width: 25rem;
+	}
+	.link {
+		width: 25rem;
+	}
+	.logo-box h3 {
+		font-size: 22px;
+		font-weight: bold;
+	}
+	.logo-box p {
+		font-size: 16px;
+	}
 }
