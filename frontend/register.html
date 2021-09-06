@@ -26,9 +26,9 @@
     />
     <link rel="shortcut icon" type="logo" href="./images/favicon.png" />
     <!-- Local Css -->
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/register.css" />
 
-    <title>Login</title>
+    <title>Sign-Up</title>
   </head>
 
   <body>
@@ -59,44 +59,57 @@
       </div>
       <div class="fluid-container login">
         <div class="form-container">
-          <form action="/login" method="post" class="login">
+          <form action="/signup" method="post" class="register">
+            <div class="logo-mobile">
+              <img src="./images/logo.png" alt="logo" />
+            </div>
+            <h4 class="com-heading">Webarch Forms</h4>
+            <h6 class="com-para">Start your journey with us !</h6>
+            <div class="mb-3">
+              <label for="exampleInputName1" class="form-label fw-bold"
+                >Enter name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="exampleInputName1"
+                aria-describedby="emailHelp"
+              />
+            </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label fw-bold"
                 >Enter email</label
               >
               <input
                 type="email"
-                name="email"
                 class="form-control"
+                name="email"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
-                required
               />
               <div id="emailHelp" class="form-text">
                 We'll never share your email with anyone else.
               </div>
             </div>
-            <div class="mb-5 password">
+            <div class="mb-3 password">
               <label for="exampleInputPassword1" class="form-label fw-bold"
                 >Password</label
               >
               <input
                 type="password"
-                name="passwd"
-                class="form-control mb-2"
+                name="password"
+                class="form-control"
                 id="exampleInputPassword1"
-                required
               />
-              <a href="./forgot.html">Forgot Password?</a>
             </div>
             <div class="mybtn">
               <button type="submit" class="btn btn-success btn-login">
-                Login
+                Sign up
               </button>
-              <h5 class="my-2">Or</h5>
             </div>
             <div class="signUp mt-5">
-              <a href="./register.html">Don't have an account? Sign Up</a>
+              <a href="./login.html">Already have an account? Login</a>
             </div>
           </form>
         </div>
