@@ -47,6 +47,7 @@ body {
 .row {
   margin-left: 0;
   margin-right: 0;
+  justify-content: center;
 }
 
 .tog-btn {
@@ -83,6 +84,7 @@ h1 {
   border-radius: 5px;
   font-size: 17px;
   overflow-x: hidden;
+  margin-right: 1rem;
 }
 
 .search-wrapper input {
@@ -95,8 +97,8 @@ h1 {
 
 .search-wrapper img {
   border-radius: 50%;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
   align-items: center;
 }
 
@@ -106,6 +108,7 @@ h1 {
   color: white;
   font-size: 17px;
   display: inline-block;
+  margin: 0 1rem;
 }
 
 button i {
@@ -153,13 +156,21 @@ button i {
   margin-top: 5vh;
 }
 
+none {
+  display: block;
+}
+
 .list-header {
   padding-right: 0%;
   margin-right: 45px;
 }
 
+.list-header:last-child {
+  margin-left: 1.5rem;
+}
+
 .list-body {
-  margin-right: 35px;
+  margin-right: 85px;
 }
 
 .list-body2 {
@@ -202,13 +213,20 @@ button i {
   clear: both;
 }
 
+.list-group-item p{
+  margin-bottom: 0;
+}
+
 .alignleft {
   float: left;
+  margin-top: 0.5rem;
 }
 
 .alignright {
   float: right;
   justify-content: space-between;
+  margin-bottom: 0;
+  width: 35%;
 }
 
 .l1 {
@@ -235,6 +253,8 @@ button i {
 
 .link-btn {
   padding: 5% !important;
+  width: 25%;
+  margin-left: 1rem;
 }
 
 .sign-out {
@@ -293,6 +313,12 @@ button i {
   display: none;
 }
 
+@media (max-width: 1741px) {
+  .alignright {
+    width: 45%;
+  }
+}
+
 @media (max-width: 1390px) {
   .grid-container {
     width: 25rem;
@@ -312,6 +338,9 @@ button i {
     display: inline-block;
     position: relative;
     color: #1f74c2;
+  }
+  .alignright {
+    width: 50%;
   }
 }
 
@@ -340,6 +369,9 @@ button i {
   .grid-container {
     width: 80%;
   }
+  .alignright {
+    width: 51%;
+  }
 }
 
 @media (max-width: 1240px) {
@@ -356,6 +388,9 @@ button i {
   }
   .column button {
     width: 223px;
+  }
+  .alignright {
+    width: 63%;
   }
 }
 
@@ -378,9 +413,13 @@ button i {
   .grid-item {
     width: 12rem;
   }
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
-@media (max-width: 869px) {
+/* @media (max-width: 869px) {
   .col-1 img {
     display: inline-block;
     width: 400px;
@@ -404,6 +443,7 @@ button i {
   .container.container-list {
     padding: 0 !important;
   }
+
   .list-group-item {
     padding: 0 !important;
   }
@@ -414,22 +454,22 @@ button i {
     outline: none;
     width: 250px;
   }
-}
+} */
 
-@media (max-width: 577px) {
+@media (max-width: 960px) {
   .nav-heading {
     display: none;
   }
-  .list-header {
+  /* .list-header {
     padding-right: 0%;
     margin-right: 0px;
-  }
-  .list-body {
+  } */
+  /* .list-body {
     margin-right: 0px;
   }
   .list-body2 {
     margin-right: 0px;
-  }
+  } */
   .modal-content {
     box-sizing: border-box;
     width: 90%;
@@ -461,8 +501,17 @@ button i {
     width: 20rem;
     text-align: center;
   }
+  .list-group-item {
+    padding: .5rem 0rem;
+  }
   .column.toggle {
     left: 0%;
+  }
+  .col-md-3 {
+    width: 100%;
+  }
+  .col-md-9 {
+    width: 100%;
   }
   .col-1 img {
     display: inline-block;
@@ -492,6 +541,21 @@ button i {
     border: none;
     outline: none;
     width: 50%;
+  }
+  .container {
+    max-width: 100%;
+    margin: 1rem;
+  }
+}
+
+/* @media (max-width: 750px) {} */
+
+@media (max-width: 550px) {
+  .search-wrapper input {
+    margin-left: 1rem;
+  }
+  .search-wrapper button {
+    margin: 0 0rem;
   }
 }
 
