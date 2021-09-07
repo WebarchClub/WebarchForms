@@ -163,11 +163,32 @@ button i {
   font-size: 2px;
   font-weight: normal;
 }
+.card .p {
+  display: inline;
+  font-size: 2px;
+  font-weight: normal;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+}
+
+.card-body p.alignleft {
+  margin-top: 0;
+}
+
+.btn {
+  cursor: pointer;
+  font-size:0.7em !important;
+  padding: 0;
+}
+
 .btn-link i {
   display: inline-block;
   position: relative;
   color: #1f74c2;
 }
+
 .none {
   display: none;
 }
