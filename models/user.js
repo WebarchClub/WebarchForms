@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter an password"],
   },
+  forms: [],
 });
 
 // Function fired after the new user saved

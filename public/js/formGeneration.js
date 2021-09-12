@@ -133,14 +133,14 @@ const setSectionNumber = () => {
         });
       obj.checkB = checkBox;
 
-      if ($(fc).hasClass("addSection")) {
+      if ($(fc).hasClass("new-section")) {
         obj.sectionTitle = $(fc)
-          .children(".input-title")
+          .children(".section-title")
           .children("input[type='text']")
           .val();
         obj.titleDescription = $(fc)
-          .children(".input-description")
-          .children("input[type='text']")
+          .children(".section-description")
+          .children("textarea")
           .val();
       }
 
@@ -219,6 +219,37 @@ const setSectionNumber = () => {
         .children("textarea")
         .val();
 
+      $(fc).children(".input-title");
+
+      if ($(fc).children(".input-video").children("input[type='text']").val()) {
+        $(".modal-video")
+          .children('input[type="file"]')
+          .each(function () {
+            obj.videoFileUpload = $(this)[0].files[0];
+            obj.videoText = $(fc)
+              .children(".input-video")
+              .children("input[type='text']")
+              .val();
+          });
+      }
+      if (obj.videoFileUpload) {
+        imgArr.push(obj.videoFileUpload);
+      }
+
+      $(fc)
+        .children(".input")
+        .children(".file-upload")
+        .children(".file-select")
+        .children('input[type="file"]')
+        .each(function () {
+          obj.fileUploadOption = $(this)[0].files[0];
+        });
+      if (obj.fileUploadOption) {
+        imgArr.push(obj.fileUploadOption);
+        obj.fileUploadOptionname = obj.fileUploadOption.name;
+        console.log(obj.fileUploadOptionname);
+      }
+
       obj.date = $(fc)
         .children(".input")
         .children(".date-option")
@@ -251,14 +282,14 @@ const setSectionNumber = () => {
           checkBox.push(object1);
         });
       obj.checkB = checkBox;
-      if ($(fc).hasClass("addSection")) {
+      if ($(fc).hasClass("new-section")) {
         obj.sectionTitle = $(fc)
-          .children(".input-title")
+          .children(".section-title")
           .children("input[type='text']")
           .val();
         obj.titleDescription = $(fc)
-          .children(".input-description")
-          .children("input[type='text']")
+          .children(".section-description")
+          .children("textarea")
           .val();
       }
 
@@ -773,23 +804,46 @@ $(document).ready(function () {
     setSectionNumber();
     console.log(mainArr);
     console.log(files);
-    var data = new FormData();
+    var ind = 0;
+    var data1 = new FormData();
     for (var file of files) {
       console.log(file);
-      data.append("formData", file);
+      data1.append("formData", file);
     }
-    test = data;
-    console.log(JSON.stringify(test.getAll("formData")));
+    // for (var obj of mainArr) {
+    //   data1.append(`${ind}form`, obj);
+    //   ind = ind + 1;
+    // }
+    // test = data;
+    // console.log(JSON.stringify(test.getAll("formData")));
     // formData.append("file", files);
     // console.log(formData);
     try {
-      const config = {
-        method: "POST",
-        url: `/generation/${data}`,
-        headers: { "Content-Type": "multipart/form-data" },
-        data: data
-      };
-      const response = await axios(config);
+      if (files.length > 0) {
+        const config = {
+          method: "POST",
+          url: `/generation/${data}`,
+          headers: { "Content-Type": "multipart/form-data" },
+          data: data1,
+        };
+        const response = await axios(config);
+        console.log(response.data.message);
+        if (response) {
+          const config1 = {
+            method: "POST",
+            url: `/dataUpload/${data}`,
+            data: mainArr,
+          };
+          const response1 = await axios(config1);
+        }
+      } else {
+        const config1 = {
+          method: "POST",
+          url: `/dataUpload/${data}`,
+          data: mainArr,
+        };
+        const response1 = await axios(config1);
+      }
     } catch (err) {
       console.log(err);
     }

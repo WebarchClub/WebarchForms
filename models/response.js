@@ -12,5 +12,5 @@ userSchema.pre("save", function (next) {
   next();
 });
 
-const Member = mongoose.model("webresponse", userSchema);
+const Member = mongoose.model("response", userSchema);
 module.exports = Member;
