@@ -117,6 +117,38 @@ const setSectionNumber = () => {
         .children('input[type="checkbox"]')
         .val();
 
+      if (
+        $(fc).children(".input-imagetitle").children("input[type='text']").val()
+      ) {
+        $(".modal-inputFile")
+          .children('input[type="file"]')
+          .each(function () {
+            obj.imageSingleFileUpload = $(this)[0].files[0];
+            obj.imageSingleText = $(fc)
+              .children(".input-imagetitle")
+              .children("input[type='text']")
+              .val();
+          });
+      }
+      if (obj.imageSingleFileUpload) {
+        imgArr.push(obj.imageSingleFileUpload);
+      }
+
+      if ($(fc).children(".input-video").children("input[type='text']").val()) {
+        $(".modal-video")
+          .children('input[type="file"]')
+          .each(function () {
+            obj.videoFileUpload = $(this)[0].files[0];
+            obj.videoText = $(fc)
+              .children(".input-video")
+              .children("input[type='text']")
+              .val();
+          });
+      }
+      if (obj.videoFileUpload) {
+        imgArr.push(obj.videoFileUpload);
+      }
+
       var checkBox = [];
       $(fc)
         .children(".input")
@@ -219,7 +251,22 @@ const setSectionNumber = () => {
         .children("textarea")
         .val();
 
-      $(fc).children(".input-title");
+      if (
+        $(fc).children(".input-imagetitle").children("input[type='text']").val()
+      ) {
+        $(".modal-inputFile")
+          .children('input[type="file"]')
+          .each(function () {
+            obj.imageSingleFileUpload = $(this)[0].files[0];
+            obj.imageSingleText = $(fc)
+              .children(".input-imagetitle")
+              .children("input[type='text']")
+              .val();
+          });
+      }
+      if (obj.imageSingleFileUpload) {
+        imgArr.push(obj.imageSingleFileUpload);
+      }
 
       if ($(fc).children(".input-video").children("input[type='text']").val()) {
         $(".modal-video")
@@ -671,7 +718,7 @@ $(document).ready(function () {
       uploadedFile = URL.createObjectURL(inputImage.files[0]);
       imageSection = `
         <div class="imageSection form-block addSection">
-          <div class="input-title">
+          <div class="input-imagetitle">
             <input type="text" placeholder="Image Title" />
             <span class="icons">
               <i class="far fa-copy copyImage"></i>

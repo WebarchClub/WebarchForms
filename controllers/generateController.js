@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoDB = require("mongodb");
 const Form = require("../models/form");
 const User = require("../models/user");
 const multer = require("multer");
@@ -63,13 +64,16 @@ module.exports.getImg = (req, res) => {
       });
     }
 
-    if (file.contentType == "image/jpeg" || file.contentType == "image/png") {
+    if (
+      file.contentType == "image/jpeg" ||
+      file.contentType == "image/png" ||
+      file.contentType == "video/mp4"
+    ) {
       const readstream = gfs.createReadStream(file.filename);
       readstream.pipe(res);
     } else {
-      res.status(404).json({
-        err: "Not an image",
-      });
+      const readstream = gfs.createReadStream(file.filename);
+      readstream.pipe(res);
     }
   });
 };
