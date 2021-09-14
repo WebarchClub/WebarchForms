@@ -35,7 +35,7 @@ module.exports.signup_post = async (req, res) => {
 
       const token = createToken(member._id);
       res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-      res.redirect("/createForm/" + member.name);
+      res.redirect("/createForm/" + member.email);
     } catch (err) {
       console.log(err);
       res.redirect("/login");
@@ -52,7 +52,7 @@ module.exports.login_post = async (req, res) => {
       if (result) {
         const token = createToken(user._id);
         res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-        res.redirect("/createForm/" + user.name);
+        res.redirect("/createForm/" + user.email);
       } else {
         console.log("wrong pass");
         res.redirect("/login");
@@ -124,7 +124,7 @@ module.exports.reset_post = (req, res) => {
           password: hash,
         }
       );
-      res.redirect("/createForm/" + user.name);
+      res.redirect("/createForm/" + user.email);
     } catch (err) {
       console.log(err);
     }
