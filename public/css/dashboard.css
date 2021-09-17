@@ -2,9 +2,6 @@
 	transition: all 0.1s ease-in-out;
 }
 
-.grow:hover {
-	transform: scale(1.05);
-}
 
 /* scrollbar start  */
 
@@ -54,7 +51,7 @@ body {
 }
 
 .tog-btn:hover {
-	font-size: 1.7rem;
+	/* font-size: 1.7rem; */
 	color: #1f74c2;
 }
 
