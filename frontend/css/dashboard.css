@@ -386,7 +386,7 @@ table thead tr th:nth-child(4) {
 	}
   #menu {
 		display: block;
-		top: 17px;
+		top: 0px;
 		left: 3px;
 		background: none;
 	}
@@ -428,7 +428,7 @@ table thead tr th:nth-child(4) {
 		padding: 0.5rem;
 		border: none;
 		outline: none;
-		width: 200px;
+		width: 180px;
 	}
 }
 
@@ -453,14 +453,11 @@ table thead tr th:nth-child(4) {
 		padding: 2rem;
 		border-radius: 10px;
 	}
-	/* #menu {
-		display: block;
-		top: 10px;
-		left: 3px;
-		background: none;
-	} */
 	header {
 		z-index: 2;
+	}
+	header>div {
+		width: 100%;
 	}
 	.card {
 		width: 15rem;
@@ -477,9 +474,6 @@ table thead tr th:nth-child(4) {
 		width: 20rem;
 		text-align: center;
 	}
-	/* .column.toggle {
-		left: 0%;
-	} */
 	.col-1 img {
 		display: inline-block;
 		width: 400px;
@@ -496,12 +490,9 @@ table thead tr th:nth-child(4) {
 		width: 18rem;
 		text-align: center;
 	}
-	/* .column {
-		position: absolute;
-		left: -140%;
-		max-width: 100%;
-		z-index: 2;
-	} */
+	.search-wrapper {
+		width: 100%;
+	}
 	.search-wrapper input {
 		display: flex;
 		padding: 0.5rem;
@@ -514,7 +505,7 @@ table thead tr th:nth-child(4) {
   }
 }
 
-@media (max-width: 476px) {
+@media (max-width: 490px) {
 	.col-1 {
 		width: 200px;
 	}
@@ -525,7 +516,7 @@ table thead tr th:nth-child(4) {
 	}
 	#menu {
 		display: block;
-		top: 0.9rem;
+		top: 0rem;
 		right: 1rem;
 	}
 	.modal-content {
@@ -566,7 +557,7 @@ table thead tr th:nth-child(4) {
 		padding: 0.5rem;
 		border: none;
 		outline: none;
-		width: 50%;
+		width: 35%;
 	}
 	.search-wrapper img {
 		margin-right: 0;
@@ -601,7 +592,7 @@ table thead tr th:nth-child(4) {
 		padding: 0.5rem;
 		border: none;
 		outline: none;
-		width: 50%;
+		width: 35%;
 	}
 	.search-wrapper img {
 		margin-right: 0;
