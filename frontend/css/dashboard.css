@@ -2,9 +2,6 @@
 	transition: all 0.1s ease-in-out;
 }
 
-.grow:hover {
-	transform: scale(1.05);
-}
 
 /* scrollbar start  */
 
@@ -54,7 +51,7 @@ body {
 }
 
 .tog-btn:hover {
-	font-size: 1.7rem;
+	/* font-size: 1.7rem; */
 	color: #1f74c2;
 }
 
@@ -292,6 +289,9 @@ button i {
 .none {
 	display: none;
 }
+table thead tr th:nth-child(4) {
+  padding: 0 1.2rem;
+}
 
 @media (max-width: 1390px) {
 	.grid-container {
@@ -378,6 +378,21 @@ button i {
 	.grid-item {
 		width: 12rem;
 	}
+  .column {
+		position: absolute;
+		left: -140%;
+		max-width: 100%;
+		z-index: 2;
+	}
+  #menu {
+		display: block;
+		top: 0px;
+		left: 3px;
+		background: none;
+	}
+  .column.toggle {
+		left: 0%;
+	}
 }
 
 @media (max-width: 869px) {
@@ -403,6 +418,7 @@ button i {
 	}
 	.container.container-list {
 		padding: 0 !important;
+    max-width: 100%;
 	}
 	.list-group-item {
 		padding: 0 !important;
@@ -412,7 +428,7 @@ button i {
 		padding: 0.5rem;
 		border: none;
 		outline: none;
-		width: 250px;
+		width: 180px;
 	}
 }
 
@@ -437,14 +453,11 @@ button i {
 		padding: 2rem;
 		border-radius: 10px;
 	}
-	#menu {
-		display: block;
-		top: 10px;
-		left: 3px;
-		background: none;
-	}
 	header {
 		z-index: 2;
+	}
+	header>div {
+		width: 100%;
 	}
 	.card {
 		width: 15rem;
@@ -460,9 +473,6 @@ button i {
 	.grid-item {
 		width: 20rem;
 		text-align: center;
-	}
-	.column.toggle {
-		left: 0%;
 	}
 	.col-1 img {
 		display: inline-block;
@@ -480,11 +490,8 @@ button i {
 		width: 18rem;
 		text-align: center;
 	}
-	.column {
-		position: absolute;
-		left: -140%;
-		max-width: 100%;
-		z-index: 2;
+	.search-wrapper {
+		width: 100%;
 	}
 	.search-wrapper input {
 		display: flex;
@@ -493,9 +500,12 @@ button i {
 		outline: none;
 		width: 50%;
 	}
+  .dnone {
+    display: none;
+  }
 }
 
-@media (max-width: 476px) {
+@media (max-width: 490px) {
 	.col-1 {
 		width: 200px;
 	}
@@ -506,7 +516,7 @@ button i {
 	}
 	#menu {
 		display: block;
-		top: 0.9rem;
+		top: 0rem;
 		right: 1rem;
 	}
 	.modal-content {
@@ -547,7 +557,7 @@ button i {
 		padding: 0.5rem;
 		border: none;
 		outline: none;
-		width: 50%;
+		width: 35%;
 	}
 	.search-wrapper img {
 		margin-right: 0;
@@ -582,7 +592,7 @@ button i {
 		padding: 0.5rem;
 		border: none;
 		outline: none;
-		width: 50%;
+		width: 35%;
 	}
 	.search-wrapper img {
 		margin-right: 0;
