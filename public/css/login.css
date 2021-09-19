@@ -69,6 +69,17 @@
   background: #bebebe;
 }
 
+.logo-mobile {
+  display: none;
+}
+
+.com-heading {
+  display: none;
+}
+
+.com-para {
+  display: none;
+}
 /* scrollbar end  */
 
 html {
@@ -78,7 +89,7 @@ html {
 section {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 0.6fr 1.2fr;
 }
 
 .navbar {
@@ -119,6 +130,7 @@ section {
   border-radius: 2rem;
   padding: 2rem;
   box-shadow: 0 0 2.3rem #005081;
+  margin: 15px;
 }
 
 .logo .logo-box img {
@@ -155,7 +167,7 @@ section {
 }
 
 .login .form-container form input {
-  border-radius: 1rem;
+  border: 2px solid #001c44;
 }
 
 .recoverPassword {
@@ -188,7 +200,8 @@ section {
 
 .signUp a {
   color: blue;
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 /* Media Queries  */

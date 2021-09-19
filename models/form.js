@@ -18,5 +18,5 @@ userSchema.pre("save", function (next) {
   console.log("User about to be created", this);
   next();
 });
-const Member = new mongoose.model("form", userSchema);
+const Member = mongoose.model("form", userSchema);
 module.exports = Member;

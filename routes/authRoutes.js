@@ -13,6 +13,9 @@ router.post("/forgot", authController.forgot_post);
 
 router.get("/reset/:pass", authController.reset_get);
 router.post("/reset/:pass", authController.reset_post);
+
+router.get("/logout", authController.logout);
+
 router.get("/check", (req, res) => {
   res.render("check");
 });

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const mongoDB = require("mongodb");
 const Form = require("../models/form");
 const User = require("../models/user");
 const multer = require("multer");
@@ -43,14 +42,18 @@ module.exports.dataUpload_post = async (req, res) => {
       }
     );
     console.log(dataUser);
-    const postData = await Form.create({
-      email: dataUser[0].email,
-      formId: uid,
-      url: "http://localhost:5000/response/" + uid,
-      arObj: req.body,
-    });
-    console.log(postData);
-    return res.json({ data: postData });
+    try {
+      const postData = await Form.create({
+        email: dataUser.email,
+        formId: uid,
+        url: "http://localhost:5000/response/" + uid,
+        arObj: req.body,
+      });
+      console.log("postData", postData);
+      return res.json({ data: postData });
+    } catch (err) {
+      console.log(err.message);
+    }
   } catch (e) {
     return res.json({ error: "unable to send the data" });
   }

@@ -130,3 +130,10 @@ module.exports.reset_post = (req, res) => {
     }
   });
 };
+module.exports.logout = (req, res) => {
+  res.cookie("jwt", "", {
+    httpOnly: true,
+    expires: new Date(1),
+  });
+  res.redirect("/login");
+};

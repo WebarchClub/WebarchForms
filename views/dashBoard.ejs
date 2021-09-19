@@ -25,7 +25,7 @@
                 <div class="search-wrapper py-3 ">
                     <input type="text" placeholder="Search">
                     <img src="/assests/person.png" width="40px" height="40px" alt="person">
-                    <button type="submit" class="btn btn-light">
+                    <button type="submit" class="btn btn-light" onclick="window.location.href='/logout'">
             <i class="fas fa-sign-out-alt sign-out">Logout</i>
           </button>
                 </div>
@@ -81,42 +81,34 @@
                         <p class="alignleft"><b>Recently Used</b></p>
                         <p class="alignright"><i class="fas fa-th-large grid-layout tog-btn active grow"></i></p>
                     </div>
-                    <ul class="list-group list-group-flush py-5">
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft"><b>Name</b></p>
-                            <p class="alignright"><b class="list-header">Date Of Creation</b> <b class="list-header">End Date</b> <b class="list-header">Link</b></p>
+                    
 
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="alignleft">Lorem Ipsum dolor ipsum</p>
-                            <p class="alignright"><span class="list-body">31/12/2021</span> <span class="list-body2">31/12/2021</span> <button class="active btn btn-primary link-btn grow"> Get Link</button> <i class="fas fa-ellipsis-v btn"></i></p>
-                        </li>
-                    </ul>
+                    
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2">Email</th>
+                                    <th class="dnone" scope="col">Url</th>
+                                    <!-- <th class="dnone" scope="col">End Date</th> -->
+                                    <th scope="col">Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for(var i in forms){%>
+                                    <tr>
+                                        <th scope="row" colspan="2"><%=forms[i].email%></th>
+                                        <td class="dnone"><%=forms[i].url%></td>
+                                        
+                                        <td><i class="fas fa-sort-down d-altn"></i><button
+                                            onclick="window.location.href='<%=forms[i].url%>'"
+                                                class="active btn btn-primary link-btn grow"> Get Link</button> <i
+                                                class="fas fa-ellipsis-v btn"></i></td>
+                                    </tr>
+                                    <%}%>
+                                
+                            </tbody>
+                        </table>
                 </div>
 
                 <div class=" card-container none ">

@@ -16,6 +16,26 @@ const handleLayout = () => {
 $(window).resize(function () {
   handleLayout();
 });
+function renameFile(originalFile, newName) {
+  return new File([originalFile], newName, {
+    type: originalFile.type,
+    lastModified: originalFile.lastModified,
+  });
+}
+function create_UUID() {
+  var dt = new Date().getTime();
+  var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+    /[xy]/g,
+    function (c) {
+      var r = (dt + Math.random() * 16) % 16 | 0;
+      dt = Math.floor(dt / 16);
+      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
+    }
+  );
+  return uuid;
+}
+
+// console.log(create_UUID());
 
 const setSectionNumber = () => {
   let fcs = $(".form-block");
@@ -66,7 +86,12 @@ const setSectionNumber = () => {
         .children(".question-image")
         .children("input")
         .each(function () {
-          obj.file = $(this)[0].files[0];
+          var uid = create_UUID();
+          if ($(this)[0].files[0]) {
+            // $(this)[0].files[0].name = uid;
+            obj.file = renameFile($(this)[0].files[0], uid);
+          }
+          // $(this)[0].files[0].name = uid;
         });
       if (obj.file) {
         imgArr.push(obj.file);
@@ -123,14 +148,20 @@ const setSectionNumber = () => {
         $(".modal-inputFile")
           .children('input[type="file"]')
           .each(function () {
-            obj.imageSingleFileUpload = $(this)[0].files[0];
-            obj.imageSingleText = $(fc)
-              .children(".input-imagetitle")
-              .children("input[type='text']")
-              .val();
+            var uid = create_UUID();
+            if ($(this)[0].files[0]) {
+              // $(this)[0].files[0].name = uid;
+
+              obj.imageSingleFileUpload = renameFile($(this)[0].files[0], uid);
+              obj.imageSingleText = $(fc)
+                .children(".input-imagetitle")
+                .children("input[type='text']")
+                .val();
+            }
           });
       }
       if (obj.imageSingleFileUpload) {
+        obj.imgSingleFilename = obj.imageSingleFileUpload.name;
         imgArr.push(obj.imageSingleFileUpload);
       }
 
@@ -138,14 +169,19 @@ const setSectionNumber = () => {
         $(".modal-video")
           .children('input[type="file"]')
           .each(function () {
-            obj.videoFileUpload = $(this)[0].files[0];
-            obj.videoText = $(fc)
-              .children(".input-video")
-              .children("input[type='text']")
-              .val();
+            var uid = create_UUID();
+            if ($(this)[0].files[0]) {
+              // $(this)[0].files[0].name = uid;
+              obj.videoFileUpload = renameFile($(this)[0].files[0], uid);
+              obj.videoText = $(fc)
+                .children(".input-video")
+                .children("input[type='text']")
+                .val();
+            }
           });
       }
       if (obj.videoFileUpload) {
+        obj.vidSingleFilename = obj.videoFileUpload.name;
         imgArr.push(obj.videoFileUpload);
       }
 
@@ -215,7 +251,11 @@ const setSectionNumber = () => {
         .children(".question-image")
         .children("input")
         .each(function () {
-          obj.file = $(this)[0].files[0];
+          var uid = create_UUID();
+          if ($(this)[0].files[0]) {
+            // $(this)[0].files[0].name = uid;
+            obj.file = renameFile($(this)[0].files[0], uid);
+          }
         });
 
       if (obj.file) {
@@ -257,14 +297,22 @@ const setSectionNumber = () => {
         $(".modal-inputFile")
           .children('input[type="file"]')
           .each(function () {
-            obj.imageSingleFileUpload = $(this)[0].files[0];
-            obj.imageSingleText = $(fc)
-              .children(".input-imagetitle")
-              .children("input[type='text']")
-              .val();
+            var uid = create_UUID();
+            if ($(this)[0].files[0]) {
+              // console.log("new modified", renameFile($(this)[0].files[0], uid));
+              // $(this)[0].files[0].name = uid;
+              obj.imageSingleFileUpload = renameFile($(this)[0].files[0], uid);
+              // obj.imageSingleFileUpload.name = uid;
+              obj.imageSingleText = $(fc)
+                .children(".input-imagetitle")
+                .children("input[type='text']")
+                .val();
+              console.log(obj.imageSingleFileUpload);
+            }
           });
       }
       if (obj.imageSingleFileUpload) {
+        obj.imgSingleFilename = obj.imageSingleFileUpload.name;
         imgArr.push(obj.imageSingleFileUpload);
       }
 
@@ -272,14 +320,19 @@ const setSectionNumber = () => {
         $(".modal-video")
           .children('input[type="file"]')
           .each(function () {
-            obj.videoFileUpload = $(this)[0].files[0];
-            obj.videoText = $(fc)
-              .children(".input-video")
-              .children("input[type='text']")
-              .val();
+            var uid = create_UUID();
+            if ($(this)[0].files[0]) {
+              // $(this)[0].files[0].name = uid;
+              obj.videoFileUpload = renameFile($(this)[0].files[0], uid);
+              obj.videoText = $(fc)
+                .children(".input-video")
+                .children("input[type='text']")
+                .val();
+            }
           });
       }
       if (obj.videoFileUpload) {
+        obj.vidSingleFilename = obj.videoFileUpload.name;
         imgArr.push(obj.videoFileUpload);
       }
 
@@ -289,7 +342,11 @@ const setSectionNumber = () => {
         .children(".file-select")
         .children('input[type="file"]')
         .each(function () {
-          obj.fileUploadOption = $(this)[0].files[0];
+          var uid = create_UUID();
+          if ($(this)[0].files[0]) {
+            // $(this)[0].files[0].name = uid;
+            obj.fileUploadOption = renameFile($(this)[0].files[0], uid);
+          }
         });
       if (obj.fileUploadOption) {
         imgArr.push(obj.fileUploadOption);
@@ -719,7 +776,7 @@ $(document).ready(function () {
       imageSection = `
         <div class="imageSection form-block addSection">
           <div class="input-imagetitle">
-            <input type="text" placeholder="Image Title" />
+            <input type="text" placeholder="Image Title" required/>
             <span class="icons">
               <i class="far fa-copy copyImage"></i>
               <i class="far fa-trash deleteImage"></i>
@@ -782,7 +839,7 @@ $(document).ready(function () {
         `
           <div class="video-section form-block">
           <div class="input-video">
-            <input type="text" placeholder="Video Title" />
+            <input type="text" placeholder="Video Title" required/>
             <span class="videoOptions">
               <i class="far fa-copy copyVideo"></i>
               <i class="far fa-trash deleteVideo"></i>
