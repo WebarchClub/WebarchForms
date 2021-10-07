@@ -1,4 +1,364 @@
-<%- include("./partials/header") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="logo" href="/assests/favicon.png" />
 
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Local Css -->
+    <link rel="stylesheet" href="/css/style.css" />
 
-<%- include("./partials/footer") %>
+    <title>WebarchForms</title>
+  </head>
+
+  <body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="/assests/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand grow" href="./index.html"
+          ><img src="/assests/logo.png" width="40px" height="40px"
+        /></a>
+        <a class="nav-link btn nav-button-mobile" href="/login">Try Now</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse ml-auto navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link middle" href="#about"
+                ><i class="fas fa-users"></i> About Us
+                <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link middle" href="#services"
+                ><i class="fas fa-briefcase"></i> Our Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn nav-button1" href="/login">Try Now</a>
+            </li>
+            <li class="nav-item">
+              <a href="./index"
+                ><img
+                  src="/assests/logo.png"
+                  class="rotate nav-mobile-logo"
+                  width="80px"
+                  height="80px"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header">
+        <div class="white_bg">
+          <section>
+            <div class="row">
+              <div class="col-md-12 col-lg-5 banner_img_mobile">
+                <div class="text_img grow2 text-center">
+                  <figure>
+                    <img
+                      class="banner_mobile"
+                      src="/assests/ban_img.png"
+                      alt="banner image"
+                    />
+                  </figure>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-7">
+                <div class="text-bg">
+                  <h1 class="head1">Forms</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Neque, corrupti id reiciendis, quisquam culpa veniam
+                    pariatur doloribus facere, amet quis vitae. Earum atque
+                    quasi odio explicabo similique animi tenetur eius.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-5 banner_img_desktop">
+                <div class="text_img grow2 text-center">
+                  <figure>
+                    <img
+                      class="banner_desktop"
+                      src="/assests/ban_img.png"
+                      alt="banner image"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="text-center col-12">
+                <a href="#services" class="scrolldown grow">Scroll Down</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <br />
+    </header>
+    <!-- end banner -->
+
+    <!-- services section -->
+    <div class="services" id="services">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <div class="text-center titlepage">
+              <h2>What we offer</h2>
+            </div>
+          </div>
+
+          <div
+            class="col-xs-12 col-sm-6 col-md-6 d-flex justify-content-center"
+          >
+            <div class="row">
+              <div class="col-12 col-md-12 d-flex justify-content-center">
+                <div class="card">
+                  <div
+                    class="col"
+                    data-aos=" fade-right "
+                    data-aos-duration="1200 "
+                    data-aos-easing="ease-in-out "
+                  >
+                    <div class="card-body">
+                      <div id="ho_color " class="services_main">
+                        <i
+                          ><img
+                            src="/assests/forms_sercice.png "
+                            class="grow2"
+                            alt="# "
+                        /></i>
+
+                        <p>ncididunt ut labore et dolore magna aliqua</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="service-card-heading">
+                  <a
+                    href="#"
+                    class="text-center middle service-card-heading grow"
+                    >Create Form
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xs-12 col-sm-6 col-md-6 d-flex justify-content-center"
+          >
+            <div class="row">
+              <div class="col-12 col-md-12 d-flex justify-content-center">
+                <div class="card">
+                  <div
+                    class="col"
+                    data-aos=" fade-right "
+                    data-aos-duration="1200 "
+                    data-aos-easing="ease-in-out "
+                  >
+                    <div class="card-body">
+                      <div id="ho_color " class="services_main">
+                        <i
+                          ><img
+                            src="/assests/template_service.png "
+                            class="grow2"
+                            alt="# "
+                        /></i>
+
+                        <p>ncididunt ut labore et dolore magna aliqua</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="service-card-heading">
+                  <a
+                    href="./dashboard.html"
+                    class="text-center grow middle service-card-heading"
+                    >Templates
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="row">
+          <div class="col-12 col-md-12 text-center">
+            <a href="#" class="btn btn-warning btn-large grow">Try For Free</a>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <!-- about section  -->
+    <div class="row" id="about">
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <h1 class="text-center about-heading">Who are we?</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 about-img-mobile text-center">
+          <img src="/assests/logo.png" class="text-center rotate about-img" />
+        </div>
+        <div class="col-12 col-md-8 align-baseline">
+          <p class="about-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis
+            vestibulum velit vitae metus. Accumsan imperdiet at sed amet.
+            Ultrices risus morbi nibh sed eu odio pharetra vestibulum. Cursus
+            turpis at gravida tristique quis volutpat lectus fermentum purus.
+            Cursus faucibus convallis dolor integer velit. Dolor, mauris turpis
+            purus libero feugiat lacus.
+          </p>
+          <p class="about-para2">
+            <a href="#" class="about-para-link"
+              >Know More
+              <i class="fa fa-angle-double-right" aria-hidden="true"></i
+            ></a>
+          </p>
+        </div>
+        <div class="col-12 col-md-4 about-img-desktop text-center">
+          <img src="/assests/logo.png" class="text-center rotate about-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- end services section -->
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js "
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin=" anonymous "
+    ></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js "
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8 "
+      crossorigin="anonymous "
+    ></script>
+    <!-- Local Js -->
+    <script src="/sidenav-n-preloader.js "></script>
+  </body>
+
+  <footer id="contact">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 p1">
+          <div class="text-center grow2">
+            <img src="/assests/logo.png " height="80 " width="80 " />
+          </div>
+          <br />
+          <h5 class="webarch grow">Webarch - Architect Of The Web</h5>
+          <h5 class="webarch grow">SRMIST KTR</h5>
+        </div>
+        <div class="col-md-4 p1">
+          <h6 style="text-align: center; color: white">CONNECT WITH US</h6>
+          <hr class="light" />
+          <ul class="social_icon d-flex justify-content-center">
+            <li>
+              <a
+                href="https://in.linkedin.com/company/webarchclub "
+                target="blank "
+                ><i class="fab fa-linkedin grow"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://github.com/WebarchClub/ " target="blank "
+                ><i class="fab fa-github grow"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/webarchclub/ " target="blank "
+                ><i class="fab fa-instagram grow"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/webarchclub/ " target="blank "
+                ><i class="fab fa-facebook grow"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCiDFs4udzbnGkwypt1-c3tA "
+                target="blank "
+                ><i class="fab fa-youtube grow"></i
+              ></a>
+            </li>
+          </ul>
+          <hr class="light" />
+          <div class="text-center webarch-website grow2">
+            <a href="https://webarchsrm.com/ " target="_blank "
+              ><i class="fas fa-angle-double-right"></i> Visit Webarch
+              Website</a
+            >
+          </div>
+        </div>
+
+        <div class="col-md-4 p1">
+          <h6 style="text-align: center; color: white">QUICK LINKS</h6>
+          <hr class="light" />
+          <div class="text-center webarch-website grow2">
+            <a href="#" target="_blank"> About Us</a>
+          </div>
+          <div class="text-center webarch-website grow2">
+            <a href="#" target="_blank"> Our Products</a>
+          </div>
+          <div class="text-center webarch-website grow2">
+            <a href="#" target="_blank"> Terms & Condition</a>
+          </div>
+        </div>
+        <div class="col-12 p1">
+          <hr class="light-100" />
+          <h6 style="text-align: center; color: white">©Webarch 2021</h6>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webarch Forms</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script>
+      function handleChange(x) {
+        const uploadedFile = x;
+        const filename = uploadedFile.files[0].name;
+        if (!/^\s*$/.test(filename)) {
+          uploadedFile.previousSibling.previousElementSibling.innerHTML = filename;
+        }
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="heading">
+        <div class="col col-left">
+          <i class="fal fa-arrow-left arrow"></i>
+          <span id="title">Title</span>
+          <i class="fal fa-edit edit"></i>
+        </div>
+        <div class="col col-right">
+          <i class="fas fa-palette pallete"></i>
+          <i class="fas fa-th-large box"></i>
+          <button class="btn btn-yellow">Publish</button>
+        </div>
+      </div>
+      <div class="toggle">
+        <div class="nav-link active">
+          <a href="#">Form</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Response</a>
+        </div>
+      </div>
+    </nav>
+    <div class="body-content">
+      <div class="title-section">
+        <input type="text" placeholder="Title" class="title" value="Title" />
+      </div>
+      <!-- description  -->
+      <div class="description">
+        <input type="text" name="description" placeholder="Enter Description" />
+      </div>
+      <!-- description end -->
+
+      <div class="form-content">
+        <!-- form-container -->
+        <div class="form-container w-100 list">
+          <div class="form-header">
+            <div class="select-box">
+              <select name="type" id="type">
+                <option value="mcq">Multiple Choice</option>
+                <option value="short">Short answer</option>
+                <option value="para">Paragraph</option>
+                <option value="checkbox">Checkboxes</option>
+                <option value="date">Date</option>
+                <option value="time">Time</option>
+                <option value="file">File Upload</option>
+              </select>
+            </div>
+            <div class="text-box">
+              <div class="question-img"></div>
+              <div class="question-section">
+                <textarea placeholder="Enter question"></textarea>
+                <div class="question-image">
+                  <input type="file" name="question-image" class="input-question" accept="image/*" />
+                  <label for="question-image"><i class="fas fa-photo-video textarea-icon"></i></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input">
+            <div class="mcq-option">
+              <div class="mcqs">
+                <div class="option">
+                  <input type="radio" />
+                  <input type="text" placeholder="Enter option" />
+                  <i class="far fa-trash-alt deleteOption"></i>
+                </div>
+              </div>
+              <div class="add-option">
+                <input type="radio" />
+                <span class="addMcq">Add another</span>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-section">
+            <span class="child">
+              <span class="required">Required</span>
+              <input type="checkbox" />
+            </span>
+            <span class="child">
+              <i class="far fa-copy copyQuestion"></i>
+              <i class="far fa-trash deleteQuestion"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- end of form-container -->
+      </div>
+
+      <!-- add content  -->
+      <div class="add-content-container">
+        <div class="add-content">
+          <div class="options">
+            <div class="option addQuestion">
+              <i class="fas fa-plus-circle"></i>
+              <ul class="add-options">
+                <li class="addQuestionGrid">Grid</li>
+                <li class="addQuestionList">List</li>
+              </ul>
+            </div>
+            <div class="option addTitle">
+              <i class="fas fa-paragraph"></i>
+            </div>
+            <div class="option addImageSection">
+              <i class="fas fa-file-image"></i>
+            </div>
+            <div class="option addVideoSection">
+              <i class="fas fa-photo-video"></i>
+            </div>
+            <div class="option addNewSection">
+              <!-- <i class="fas fa-file-import"></i> -->
+              <i class="fas fa-grip-lines"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of add-content  -->
+    </div>
+    <div class="overlay">
+      <div class="modal-inputFile">
+        <input type="file" id="actual-btn" hidden accept="image/*" />
+        <div class="modal-body">
+          <img src="" alt="img" id="modal-img" />
+          <p class="file-chosen" id="file-chosen">No file chosen</p>
+          <label for="actual-btn">Choose</label>
+        </div>
+        <div class="modal-buttons">
+          <button class="cancel">Cancel</button>
+          <button class="proceed">Proceed</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-video">
+      <div class="modal-video">
+        <input id="file-input" type="file" accept="video/*" hidden />
+        <div class="modal-body">
+          <p class="file-chosen" id="video-chosen">No file chosen</p>
+          <label for="file-input">Choose</label>
+        </div>
+        <div class="modal-buttons">
+          <button class="cancelVideo">Cancel</button>
+          <button class="proceedVideo">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
