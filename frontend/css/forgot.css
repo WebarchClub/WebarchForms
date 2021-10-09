@@ -1,528 +1,371 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* animations  */
-
-.grow {
-  transition: all 0.2s ease-in-out !important;
-}
-
-.grow:hover {
-  transform: scale(1.1) !important;
-}
-
-.rotate {
-  transition: transform 0.5s ease-in-out;
-}
-
-.rotate:hover {
-  transform: rotate(360deg);
-}
-
-/* scrollbar start  */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 5px;
-}
-
-.middle {
-  position: relative;
-}
-
-.middle:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: rgb(255, 255, 255);
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
-}
-
-.middle:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-  background: #00222d;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  background: #337d96;
-}
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-  background: #bebebe;
-}
-
-/* scrollbar end  */
-
-html {
-  font-size: 100%;
-}
-
-section {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 0.6fr 1.2fr;
-}
-
-.navbar {
-  display: none;
-}
-
-.home-btn-desktop {
-  color: white !important;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-}
-
-.home-btn-desktop:hover {
-  color: black !important;
-}
-
-.navbar a {
-  color: white !important;
-}
-
-.nav-logo {
-  display: none;
-}
-
-.logo {
-  background-image: linear-gradient(to top, #01afc5 0%, #2e5ac2 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo .logo-box {
-  background-color: #fff;
-  width: 30rem;
-  text-align: center;
-  border-radius: 2rem;
-  padding: 2rem;
-  box-shadow: 0 0 2.3rem #005081;
-  margin:15px;
-}
-
-.logo .logo-box img {
-  width: 35%;
-  margin-bottom: 1.4rem;
-}
-
-.link {
-  background-color: #fff;
-  margin-top: 3rem;
-  padding: 1rem;
-  width: 30rem;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.link a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.login .form-container {
-  background-color: #fff;
-  width: 35rem;
-  padding: 2rem;
-}
-
-.login .form-container form input {
-  border: 2px solid #001c44;
-}
-
-.recoverPassword {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.password a {
-  color: black;
-  font-weight: bold;
-}
-
-.mybtn {
-  text-align: center;
-<<<<<<< HEAD
-}
-
-.mybtn .btn-login {
-  width: 10rem;
-}
-
-.mybtn .btn-google {
-  width: 15rem;
-}
-
-.signUp {
-  text-align: center;
-}
-
-.signUp a {
-  color: blue;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-/* Media Queries  */
-
-@media screen and (max-width: 273px) {
-  .logo {
-    display: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  
+  /* animations  */
+  
+  .grow {
+    transition: all 0.2s ease-in-out !important;
   }
-  .login {
-    width: 100%;
+  
+  .grow:hover {
+    transform: scale(1.1) !important;
   }
-  .login .form-container {
-    width: 100%;
+  
+  .rotate {
+    transition: transform 0.5s ease-in-out;
   }
-  .recoverPassword h1 {
-    font-size: 18px;
-    margin-bottom: 0;
+  
+  .rotate:hover {
+    transform: rotate(360deg);
   }
-  .navbar {
-    display: block;
-    background-color: #00222d !important;
-    height: 55px;
+  
+  /* scrollbar start  */
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
   }
-  .nav-logo {
-    display: block;
+  
+  .middle {
+    position: relative;
+  }
+  
+  .middle:before {
+    content: "";
     position: absolute;
-    top: 1px;
-    right: 10px;
-  }
-  .home-btn-desktop {
-    display: none;
-  }
-}
-
-@media (min-width: 273px) and (max-width: 342px) {
-=======
-}
-
-.mybtn .btn-login {
-  width: 10rem;
-}
-
-.mybtn .btn-google {
-  width: 15rem;
-}
-
-.signUp {
-  text-align: center;
-}
-
-.signUp a {
-  color: blue;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-/* Media Queries  */
-
-@media screen and (max-width: 273px) {
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-  .logo {
-    display: none;
-  }
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .login {
     width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
   }
-  .login .form-container {
-    width: 100%;
+  
+  .middle:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
   }
-  .recoverPassword h1 {
-<<<<<<< HEAD
-    font-size: 25px;
-=======
-    font-size: 18px;
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-    margin-bottom: 0;
+  
+  /* Track */
+  
+  ::-webkit-scrollbar-track {
+    background: #00222d;
   }
-  .navbar {
-    display: block;
-    background-color: #00222d !important;
-    height: 55px;
+  
+  /* Handle */
+  
+  ::-webkit-scrollbar-thumb {
+    background: #337d96;
   }
-<<<<<<< HEAD
-  .navbar a {
-    color: white !important;
+  
+  /* Handle on hover */
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bebebe;
   }
-=======
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-  .nav-logo {
-    display: block;
-    position: absolute;
-    top: 1px;
-    right: 10px;
-  }
-  .home-btn-desktop {
-    display: none;
-  }
-}
-
-<<<<<<< HEAD
-@media (min-width: 342px) and (max-width: 673px) {
-  .logo {
-    display: none;
-  }
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .login {
-    width: 100%;
-  }
-  .login .form-container {
-    width: 100%;
-=======
-@media (min-width: 273px) and (max-width: 342px) {
-  .logo {
-    display: none;
-  }
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .login {
-    width: 100%;
-  }
-  .login .form-container {
-    width: 100%;
-  }
-  .recoverPassword h1 {
-    font-size: 25px;
-    margin-bottom: 0;
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-  }
-  .navbar {
-    display: block;
-    background-color: #00222d !important;
-    height: 55px;
-<<<<<<< HEAD
-    color: white;
-=======
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-  }
-  .navbar a {
-    color: white !important;
-  }
-  .nav-logo {
-    display: block;
-    position: absolute;
-    top: 1px;
-    right: 10px;
-  }
-  .home-btn-desktop {
-    display: none;
-  }
-}
-
-<<<<<<< HEAD
-@media (min-width: 674px) and (max-width: 900px) {
-  .navbar a {
-    color: white !important;
-  }
-  .logo .logo-box {
-    width: 17rem;
-    margin: 0 1rem;
-  }
-  .link {
-    width: 17rem;
-  }
-  .logo-box h3 {
-    font-size: 13px;
-    font-weight: bold;
-  }
-  .logo-box p {
-    font-size: 9px;
-  }
+  
+  /* scrollbar end  */
+  
   html {
-    font-size: 95%;
+    font-size: 100%;
   }
-  .login .form-container {
-    width: 25rem;
+  
+  section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 0.6fr 1.2fr;
   }
-  .recoverPassword h1 {
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 901px) and (max-width: 1000px) {
-=======
-@media (min-width: 342px) and (max-width: 673px) {
-  .logo {
+  
+  .navbar {
     display: none;
   }
-  section {
+  
+  .home-btn-desktop {
+    color: white !important;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  
+  .home-btn-desktop:hover {
+    color: black !important;
+  }
+  
+  .navbar a {
+    color: white !important;
+  }
+  
+  .nav-logo {
+    display: none;
+  }
+  
+  .logo {
+    background-image: linear-gradient(to top, #01afc5 0%, #2e5ac2 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+  
+  .logo .logo-box {
+    background-color: #fff;
+    width: 30rem;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 0 2.3rem #005081;
+    margin:15px;
+  }
+  
+  .logo .logo-box img {
+    width: 35%;
+    margin-bottom: 1.4rem;
+  }
+  
+  .link {
+    background-color: #fff;
+    margin-top: 3rem;
+    padding: 1rem;
+    width: 30rem;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .link a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
   .login {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+  
   .login .form-container {
-    width: 100%;
+    background-color: #fff;
+    width: 35rem;
+    padding: 2rem;
   }
-  .navbar {
-    display: block;
-    background-color: #00222d !important;
-    height: 55px;
-    color: white;
+  
+  .login .form-container form input {
+    border: 2px solid #001c44;
   }
-  .navbar a {
-    color: white !important;
+  
+  .recoverPassword {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
-  .nav-logo {
-    display: block;
-    position: absolute;
-    top: 1px;
-    right: 10px;
-  }
-  .home-btn-desktop {
-    display: none;
-  }
-}
-
-@media (min-width: 674px) and (max-width: 900px) {
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-  .navbar a {
-    color: white !important;
-  }
-  .logo .logo-box {
-<<<<<<< HEAD
-    width: 20rem;
-  }
-  .link {
-    width: 20rem;
-  }
-  .logo-box h3 {
-    font-size: 15px;
+  
+  .password a {
+    color: black;
     font-weight: bold;
   }
-  .logo-box p {
-    font-size: 10px;
+  
+  .mybtn {
+    text-align: center;
   }
-}
-
-@media (min-width: 1001px) and (max-width: 1130px) {
-  .logo .logo-box {
-    width: 25rem;
+  
+  .mybtn .btn-login {
+    width: 10rem;
   }
-  .link {
-    width: 25rem;
+  
+  .mybtn .btn-google {
+    width: 15rem;
   }
-  .logo-box h3 {
-    font-size: 22px;
+  
+  .signUp {
+    text-align: center;
+  }
+  
+  .signUp a {
+    color: blue;
+    text-decoration: underline;
     font-weight: bold;
   }
-  .logo-box p {
-    font-size: 16px;
-=======
-    width: 17rem;
-    margin: 0 1rem;
+  
+  /* Media Queries  */
+  
+  @media screen and (max-width: 273px) {
+    .logo {
+      display: none;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .login {
+      width: 100%;
+    }
+    .login .form-container {
+      width: 100%;
+    }
+    .recoverPassword h1 {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    .navbar {
+      display: block;
+      background-color: #00222d !important;
+      height: 55px;
+    }
+    .nav-logo {
+      display: block;
+      position: absolute;
+      top: 1px;
+      right: 10px;
+    }
+    .home-btn-desktop {
+      display: none;
+    }
   }
-  .link {
-    width: 17rem;
+  
+  @media (min-width: 273px) and (max-width: 342px) {
+    .logo {
+      display: none;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .login {
+      width: 100%;
+    }
+    .login .form-container {
+      width: 100%;
+    }
+    .recoverPassword h1 {
+      font-size: 25px;
+      margin-bottom: 0;
+    }
+    .navbar {
+      display: block;
+      background-color: #00222d !important;
+      height: 55px;
+    }
+    .navbar a {
+      color: white !important;
+    }
+    .nav-logo {
+      display: block;
+      position: absolute;
+      top: 1px;
+      right: 10px;
+    }
+    .home-btn-desktop {
+      display: none;
+    }
   }
-  .logo-box h3 {
-    font-size: 13px;
-    font-weight: bold;
+  
+  @media (min-width: 342px) and (max-width: 673px) {
+    .logo {
+      display: none;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .login {
+      width: 100%;
+    }
+    .login .form-container {
+      width: 100%;
+    }
+    .navbar {
+      display: block;
+      background-color: #00222d !important;
+      height: 55px;
+      color: white;
+    }
+    .navbar a {
+      color: white !important;
+    }
+    .nav-logo {
+      display: block;
+      position: absolute;
+      top: 1px;
+      right: 10px;
+    }
+    .home-btn-desktop {
+      display: none;
+    }
   }
-  .logo-box p {
-    font-size: 9px;
+  
+  @media (min-width: 674px) and (max-width: 900px) {
+    .navbar a {
+      color: white !important;
+    }
+    .logo .logo-box {
+      width: 17rem;
+      margin: 0 1rem;
+    }
+    .link {
+      width: 17rem;
+    }
+    .logo-box h3 {
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .logo-box p {
+      font-size: 9px;
+    }
+    html {
+      font-size: 95%;
+    }
+    .login .form-container {
+      width: 25rem;
+    }
+    .recoverPassword h1 {
+      font-size: 30px;
+    }
   }
-  html {
-    font-size: 95%;
+  
+  @media (min-width: 901px) and (max-width: 1000px) {
+    .navbar a {
+      color: white !important;
+    }
+    .logo .logo-box {
+      width: 20rem;
+    }
+    .link {
+      width: 20rem;
+    }
+    .logo-box h3 {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .logo-box p {
+      font-size: 10px;
+    }
   }
-  .login .form-container {
-    width: 25rem;
+  
+  @media (min-width: 1001px) and (max-width: 1130px) {
+    .logo .logo-box {
+      width: 25rem;
+    }
+    .link {
+      width: 25rem;
+    }
+    .logo-box h3 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .logo-box p {
+      font-size: 16px;
+    }
   }
-  .recoverPassword h1 {
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 901px) and (max-width: 1000px) {
-  .navbar a {
-    color: white !important;
-  }
-  .logo .logo-box {
-    width: 20rem;
-  }
-  .link {
-    width: 20rem;
-  }
-  .logo-box h3 {
-    font-size: 15px;
-    font-weight: bold;
-  }
-  .logo-box p {
-    font-size: 10px;
->>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
-  }
-}
-
-@media (min-width: 1001px) and (max-width: 1130px) {
-  .logo .logo-box {
-    width: 25rem;
-  }
-  .link {
-    width: 25rem;
-  }
-  .logo-box h3 {
-    font-size: 22px;
-    font-weight: bold;
-  }
-  .logo-box p {
-    font-size: 16px;
-  }
-}
