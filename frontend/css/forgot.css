@@ -173,6 +173,7 @@ section {
 
 .mybtn {
   text-align: center;
+<<<<<<< HEAD
 }
 
 .mybtn .btn-login {
@@ -232,6 +233,94 @@ section {
 }
 
 @media (min-width: 273px) and (max-width: 342px) {
+=======
+}
+
+.mybtn .btn-login {
+  width: 10rem;
+}
+
+.mybtn .btn-google {
+  width: 15rem;
+}
+
+.signUp {
+  text-align: center;
+}
+
+.signUp a {
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Media Queries  */
+
+@media screen and (max-width: 273px) {
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
+  .logo {
+    display: none;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .login {
+    width: 100%;
+  }
+  .login .form-container {
+    width: 100%;
+  }
+  .recoverPassword h1 {
+<<<<<<< HEAD
+    font-size: 25px;
+=======
+    font-size: 18px;
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
+    margin-bottom: 0;
+  }
+  .navbar {
+    display: block;
+    background-color: #00222d !important;
+    height: 55px;
+  }
+<<<<<<< HEAD
+  .navbar a {
+    color: white !important;
+  }
+=======
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
+  .nav-logo {
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 10px;
+  }
+  .home-btn-desktop {
+    display: none;
+  }
+}
+
+<<<<<<< HEAD
+@media (min-width: 342px) and (max-width: 673px) {
+  .logo {
+    display: none;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .login {
+    width: 100%;
+  }
+  .login .form-container {
+    width: 100%;
+=======
+@media (min-width: 273px) and (max-width: 342px) {
   .logo {
     display: none;
   }
@@ -250,11 +339,16 @@ section {
   .recoverPassword h1 {
     font-size: 25px;
     margin-bottom: 0;
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
   }
   .navbar {
     display: block;
     background-color: #00222d !important;
     height: 55px;
+<<<<<<< HEAD
+    color: white;
+=======
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
   }
   .navbar a {
     color: white !important;
@@ -270,6 +364,38 @@ section {
   }
 }
 
+<<<<<<< HEAD
+@media (min-width: 674px) and (max-width: 900px) {
+  .navbar a {
+    color: white !important;
+  }
+  .logo .logo-box {
+    width: 17rem;
+    margin: 0 1rem;
+  }
+  .link {
+    width: 17rem;
+  }
+  .logo-box h3 {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .logo-box p {
+    font-size: 9px;
+  }
+  html {
+    font-size: 95%;
+  }
+  .login .form-container {
+    width: 25rem;
+  }
+  .recoverPassword h1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1000px) {
+=======
 @media (min-width: 342px) and (max-width: 673px) {
   .logo {
     display: none;
@@ -307,10 +433,40 @@ section {
 }
 
 @media (min-width: 674px) and (max-width: 900px) {
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
   .navbar a {
     color: white !important;
   }
   .logo .logo-box {
+<<<<<<< HEAD
+    width: 20rem;
+  }
+  .link {
+    width: 20rem;
+  }
+  .logo-box h3 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .logo-box p {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1130px) {
+  .logo .logo-box {
+    width: 25rem;
+  }
+  .link {
+    width: 25rem;
+  }
+  .logo-box h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .logo-box p {
+    font-size: 16px;
+=======
     width: 17rem;
     margin: 0 1rem;
   }
@@ -351,6 +507,7 @@ section {
   }
   .logo-box p {
     font-size: 10px;
+>>>>>>> f48683c5de7ae24f041a2633bdd77c720d7235ea
   }
 }
 
