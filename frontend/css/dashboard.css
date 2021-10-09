@@ -189,7 +189,7 @@ button i {
 }
 .modal-btn {
 	float: center;
-	display: inline-block;
+	display: block;
 	margin: 10%;
 	margin-top: 10%;
 }
@@ -426,7 +426,7 @@ button i {
 	}
 	.modal-btn {
 		float: center;
-		display: inline-block;
+		display: block;
 		margin: 10%;
 		margin-top: 10%;
 	}
@@ -482,7 +482,7 @@ button i {
 	}
 	.modal-btn {
 		float: center;
-		display: inline-block;
+		display:block;
 		margin: 5%;
 		margin-top:3%;
 	}
@@ -581,7 +581,7 @@ button i {
 	}
 	.modal-btn {
 		float: center;
-		display: inline-block;
+		display: block;
 		margin: 5%;
 		margin-top:1%;
 	}
@@ -683,7 +683,7 @@ button i {
 	}
 	.modal-btn {
 		float: center;
-		display: inline-block;
+		display: block;
 		margin: 4%;
 		margin-top:1%;
 	}
