@@ -24,14 +24,11 @@ function renameFile(originalFile, newName) {
 }
 function create_UUID() {
   var dt = new Date().getTime();
-  var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
-    /[xy]/g,
-    function (c) {
-      var r = (dt + Math.random() * 16) % 16 | 0;
-      dt = Math.floor(dt / 16);
-      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
-    }
-  );
+  var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    var r = (dt + Math.random() * 16) % 16 | 0;
+    dt = Math.floor(dt / 16);
+    return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
   return uuid;
 }
 
@@ -63,19 +60,10 @@ const setSectionNumber = () => {
         obj.list = true;
       }
       obj.sectionNumber = sectionNumber;
-      obj.question = $(fc)
-        .children(".form-header")
-        .children(".text-box")
-        .children(".question-section")
-        .children("textarea")
-        .val();
+      obj.question = $(fc).children(".form-header").children(".text-box").children(".question-section").children("textarea").val();
 
       // type
-      obj.type = $(fc)
-        .children(".form-header")
-        .children(".select-box")
-        .children("select")
-        .val();
+      obj.type = $(fc).children(".form-header").children(".select-box").children("select").val();
 
       //image
       // const image;
@@ -105,46 +93,22 @@ const setSectionNumber = () => {
         .children(".option")
         .map((index, val) => {
           var obje2 = {};
-          obje2.radioCheck = $(val)
-            .children('input[type="radio"]')
-            .is(":checked");
+          obje2.radioCheck = $(val).children('input[type="radio"]').is(":checked");
           obje2.radioVal = $(val).children('input[type="text"]').val();
           ans1.push(obje2);
         });
       obj.mcq = ans1;
-      obj.short = $(fc)
-        .children(".input")
-        .children(".short-option")
-        .children('input[type="text"]')
-        .val();
+      obj.short = $(fc).children(".input").children(".short-option").children('input[type="text"]').val();
 
-      obj.para = $(fc)
-        .children(".input")
-        .children(".para-option")
-        .children("textarea")
-        .val();
+      obj.para = $(fc).children(".input").children(".para-option").children("textarea").val();
 
-      obj.date = $(fc)
-        .children(".input")
-        .children(".date-option")
-        .children('input[type="date"]')
-        .val();
+      obj.date = $(fc).children(".input").children(".date-option").children('input[type="date"]').val();
 
-      obj.time = $(fc)
-        .children(".input")
-        .children(".time-option")
-        .children('input[type="time"]')
-        .val();
+      obj.time = $(fc).children(".input").children(".time-option").children('input[type="time"]').val();
       //required checking
-      obj.required = $(fc)
-        .children(".bottom-section")
-        .children(".first")
-        .children('input[type="checkbox"]')
-        .val();
+      obj.required = $(fc).children(".bottom-section").children(".first").children('input[type="checkbox"]').val();
 
-      if (
-        $(fc).children(".input-imagetitle").children("input[type='text']").val()
-      ) {
+      if ($(fc).children(".input-imagetitle").children("input[type='text']").val()) {
         $(".modal-inputFile")
           .children('input[type="file"]')
           .each(function () {
@@ -153,10 +117,7 @@ const setSectionNumber = () => {
               // $(this)[0].files[0].name = uid;
 
               obj.imageSingleFileUpload = renameFile($(this)[0].files[0], uid);
-              obj.imageSingleText = $(fc)
-                .children(".input-imagetitle")
-                .children("input[type='text']")
-                .val();
+              obj.imageSingleText = $(fc).children(".input-imagetitle").children("input[type='text']").val();
             }
           });
       }
@@ -173,10 +134,7 @@ const setSectionNumber = () => {
             if ($(this)[0].files[0]) {
               // $(this)[0].files[0].name = uid;
               obj.videoFileUpload = renameFile($(this)[0].files[0], uid);
-              obj.videoText = $(fc)
-                .children(".input-video")
-                .children("input[type='text']")
-                .val();
+              obj.videoText = $(fc).children(".input-video").children("input[type='text']").val();
             }
           });
       }
@@ -193,31 +151,21 @@ const setSectionNumber = () => {
         .children(".option")
         .map((index, val) => {
           var object1 = {};
-          object1.checkBox = $(val)
-            .children('input[type="checkbox"]')
-            .is(":checked");
+          object1.checkBox = $(val).children('input[type="checkbox"]').is(":checked");
           object1.checkBoxVal = $(val).children('input[type="text"]').val();
           checkBox.push(object1);
         });
       obj.checkB = checkBox;
 
       if ($(fc).hasClass("new-section")) {
-        obj.sectionTitle = $(fc)
-          .children(".section-title")
-          .children("input[type='text']")
-          .val();
-        obj.titleDescription = $(fc)
-          .children(".section-description")
-          .children("textarea")
-          .val();
+        obj.sectionTitle = $(fc).children(".section-title").children("input[type='text']").val();
+        obj.titleDescription = $(fc).children(".section-description").children("textarea").val();
       }
 
       arr.push(obj);
       $(fc).addClass(`section-${sectionNumber}`);
     } else {
-      let sectionNumber = Number(
-        $(fc).prevAll(".new-section").first().find(".current").text().trim()
-      );
+      let sectionNumber = Number($(fc).prevAll(".new-section").first().find(".current").text().trim());
       //got question
 
       var obj = {};
@@ -228,19 +176,10 @@ const setSectionNumber = () => {
         obj.list = true;
       }
       obj.sectionNumber = sectionNumber;
-      obj.question = $(fc)
-        .children(".form-header")
-        .children(".text-box")
-        .children(".question-section")
-        .children("textarea")
-        .val();
+      obj.question = $(fc).children(".form-header").children(".text-box").children(".question-section").children("textarea").val();
 
       // type
-      obj.type = $(fc)
-        .children(".form-header")
-        .children(".select-box")
-        .children("select")
-        .val();
+      obj.type = $(fc).children(".form-header").children(".select-box").children("select").val();
 
       //image
       // const image;
@@ -272,28 +211,16 @@ const setSectionNumber = () => {
         .children(".option")
         .map((index, val) => {
           var obje2 = {};
-          obje2.radioCheck = $(val)
-            .children('input[type="radio"]')
-            .is(":checked");
+          obje2.radioCheck = $(val).children('input[type="radio"]').is(":checked");
           obje2.radioVal = $(val).children('input[type="text"]').val();
           ans1.push(obje2);
         });
       obj.mcq = ans1;
-      obj.short = $(fc)
-        .children(".input")
-        .children(".short-option")
-        .children('input[type="text"]')
-        .val();
+      obj.short = $(fc).children(".input").children(".short-option").children('input[type="text"]').val();
 
-      obj.para = $(fc)
-        .children(".input")
-        .children(".para-option")
-        .children("textarea")
-        .val();
+      obj.para = $(fc).children(".input").children(".para-option").children("textarea").val();
 
-      if (
-        $(fc).children(".input-imagetitle").children("input[type='text']").val()
-      ) {
+      if ($(fc).children(".input-imagetitle").children("input[type='text']").val()) {
         $(".modal-inputFile")
           .children('input[type="file"]')
           .each(function () {
@@ -303,10 +230,7 @@ const setSectionNumber = () => {
               // $(this)[0].files[0].name = uid;
               obj.imageSingleFileUpload = renameFile($(this)[0].files[0], uid);
               // obj.imageSingleFileUpload.name = uid;
-              obj.imageSingleText = $(fc)
-                .children(".input-imagetitle")
-                .children("input[type='text']")
-                .val();
+              obj.imageSingleText = $(fc).children(".input-imagetitle").children("input[type='text']").val();
               console.log(obj.imageSingleFileUpload);
             }
           });
@@ -324,10 +248,7 @@ const setSectionNumber = () => {
             if ($(this)[0].files[0]) {
               // $(this)[0].files[0].name = uid;
               obj.videoFileUpload = renameFile($(this)[0].files[0], uid);
-              obj.videoText = $(fc)
-                .children(".input-video")
-                .children("input[type='text']")
-                .val();
+              obj.videoText = $(fc).children(".input-video").children("input[type='text']").val();
             }
           });
       }
@@ -354,22 +275,10 @@ const setSectionNumber = () => {
         console.log(obj.fileUploadOptionname);
       }
 
-      obj.date = $(fc)
-        .children(".input")
-        .children(".date-option")
-        .children('input[type="date"]')
-        .val();
+      obj.date = $(fc).children(".input").children(".date-option").children('input[type="date"]').val();
 
-      obj.time = $(fc)
-        .children(".input")
-        .children(".time-option")
-        .children('input[type="time"]')
-        .val();
-      obj.required = $(fc)
-        .children(".bottom-section")
-        .children(".first")
-        .children('input[type="checkbox"]')
-        .is(":checked");
+      obj.time = $(fc).children(".input").children(".time-option").children('input[type="time"]').val();
+      obj.required = $(fc).children(".bottom-section").children(".first").children('input[type="checkbox"]').is(":checked");
 
       var checkBox = [];
       $(fc)
@@ -379,22 +288,14 @@ const setSectionNumber = () => {
         .children(".option")
         .map((index, val) => {
           var object1 = {};
-          object1.checkBox = $(val)
-            .children('input[type="checkbox"]')
-            .is(":checked");
+          object1.checkBox = $(val).children('input[type="checkbox"]').is(":checked");
           object1.checkBoxVal = $(val).children('input[type="text"]').val();
           checkBox.push(object1);
         });
       obj.checkB = checkBox;
       if ($(fc).hasClass("new-section")) {
-        obj.sectionTitle = $(fc)
-          .children(".section-title")
-          .children("input[type='text']")
-          .val();
-        obj.titleDescription = $(fc)
-          .children(".section-description")
-          .children("textarea")
-          .val();
+        obj.sectionTitle = $(fc).children(".section-title").children("input[type='text']").val();
+        obj.titleDescription = $(fc).children(".section-description").children("textarea").val();
       }
 
       arr.push(obj);
@@ -563,10 +464,7 @@ $(document).ready(function () {
 
   // copy question
   $(document).on("click", ".copyQuestion", function () {
-    $(this)
-      .parents(".form-container")
-      .clone()
-      .insertAfter($(this).parents(".form-container"));
+    $(this).parents(".form-container").clone().insertAfter($(this).parents(".form-container"));
     setSectionNumber();
   });
 
@@ -582,8 +480,10 @@ $(document).ready(function () {
   // add option mcqs
   $(document).on("click", ".add-option", function () {
     if ($(this).siblings(".mcqs")[0].children.length >= 2) {
-      const height = parseInt($(".form-container").css("height"));
-      $(".form-container").css("height", `${height + 45}px`);
+      const height = parseInt($($(this).parents(".form-container")[0]).css("height"));
+      // $(".form-container").css("height", `${height + 45}px`);
+      $($(this).parents(".form-container")[0]).css("height", `${height + 45}px`);
+      console.log($(this).parents(".form-container")[0]);
     }
     $($(this).siblings(".mcqs")[0]).append(`
           <div class="option">
@@ -596,8 +496,8 @@ $(document).ready(function () {
   // add option checkbox
   $(document).on("click", ".add-checkbox", function () {
     if ($(this).siblings(".check-options")[0].children.length >= 2) {
-      const height = parseInt($(".form-container").css("height"));
-      $(".form-container").css("height", `${height + 45}px`);
+      const height = parseInt($($(this).parents(".form-container")[0]).css("height"));
+      $($(this).parents(".form-container")[0]).css("height", `${height + 45}px`);
     }
     $($(this).siblings(".check-options")[0]).append(`
         <div class="option">
@@ -610,8 +510,8 @@ $(document).ready(function () {
   // delete option
   $(document).on("click", ".deleteOption", function () {
     if ($(this).parent().parent()[0].children.length >= 3) {
-      const height = parseInt($(".form-container").css("height"));
-      $(".form-container").css("height", `${height - 45}px`);
+      const height = parseInt($($(this).parents(".form-container")[0]).css("height"));
+      $($(this).parents(".form-container")[0]).css("height", `${height - 45}px`);
     }
     $(this).parent().remove();
   });
@@ -742,10 +642,7 @@ $(document).ready(function () {
     handleSectionIndex();
   });
   $(document).on("click", ".copySection", function () {
-    $(this)
-      .parents(".new-section")
-      .clone()
-      .insertAfter($(this).parents(".new-section"));
+    $(this).parents(".new-section").clone().insertAfter($(this).parents(".new-section"));
     handleSectionIndex();
   });
   // add title section
@@ -757,10 +654,7 @@ $(document).ready(function () {
     $(this).parents(".titleDescription")[0].remove();
   });
   $(document).on("click", ".copyTitle", function () {
-    $(this)
-      .parents(".titleDescription")
-      .clone()
-      .insertAfter($(this).parents(".titleDescription"));
+    $(this).parents(".titleDescription").clone().insertAfter($(this).parents(".titleDescription"));
   });
 
   // image section upload
@@ -813,10 +707,7 @@ $(document).ready(function () {
     $(this).parents(".imageSection")[0].remove();
   });
   $(document).on("click", ".copyImage", function () {
-    $(this)
-      .parents(".imageSection")
-      .clone()
-      .insertAfter($(this).parents(".imageSection"));
+    $(this).parents(".imageSection").clone().insertAfter($(this).parents(".imageSection"));
   });
 
   // video section upload
@@ -875,10 +766,7 @@ $(document).ready(function () {
     $(this).parents(".video-section")[0].remove();
   });
   $(document).on("click", ".copyVideo", function () {
-    $(this)
-      .parents(".video-section")
-      .clone()
-      .insertAfter($(this).parents(".video-section"));
+    $(this).parents(".video-section").clone().insertAfter($(this).parents(".video-section"));
   });
   $(document).on("click", ".publish", function () {
     publish();

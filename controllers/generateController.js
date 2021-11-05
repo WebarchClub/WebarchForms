@@ -46,7 +46,7 @@ module.exports.dataUpload_post = async (req, res) => {
       const postData = await Form.create({
         email: dataUser.email,
         formId: uid,
-        url: "http://localhost:5000/response/" + uid,
+        url: "http://localhost:5000/view/" + uid,
         arObj: req.body,
       });
       console.log("postData", postData);
@@ -67,11 +67,7 @@ module.exports.getImg = (req, res) => {
       });
     }
 
-    if (
-      file.contentType == "image/jpeg" ||
-      file.contentType == "image/png" ||
-      file.contentType == "video/mp4"
-    ) {
+    if (file.contentType == "image/jpeg" || file.contentType == "image/png" || file.contentType == "video/mp4") {
       const readstream = gfs.createReadStream(file.filename);
       readstream.pipe(res);
     } else {

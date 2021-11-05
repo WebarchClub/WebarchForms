@@ -14,6 +14,12 @@ textarea::placeholder {
   color: #1f74c2;
   opacity: 0.9;
 }
+input:disabled,
+textarea:disabled {
+  background-color: white;
+  color: black;
+}
+
 /* navbar styling  */
 nav {
   background-color: #1f74c2;
@@ -120,7 +126,6 @@ nav .toggle .nav-link.active a {
   height: 330px;
   border: 2px solid #1f74c2;
   padding: 20px;
-  padding-bottom: 40px;
   border-radius: 5px;
 }
 
@@ -577,22 +582,11 @@ nav .toggle .nav-link.active a {
 /* image section  */
 .body-content .form-content .imageSection {
   position: relative;
-  /* height: 370px; */
-  width: 100% !important;
-  border: 2px solid #1f74c2 !important;
+  height: 370px;
+  width: 100%;
+  border: 2px solid #1f74c2;
   padding: 5px 20px;
   border-radius: 5px;
-}
-
-.body-content .input-imagetitle {
-  width: 100%;
-  padding: 5px 10px;
-}
-.body-content .imageSection input {
-  border: none;
-  border-bottom: 2px solid #1f74c2 !important;
-  padding: 12px 10px;
-  width: 85% !important;
 }
 .body-content .form-content .imageSection .image {
   display: flex;
@@ -656,7 +650,6 @@ nav .toggle .nav-link.active a {
   border-bottom: 2px solid #1f74c2;
   padding: 12px 10px;
   width: 85%;
-  background-color: #f1f8ff;
 }
 .body-content .input-video .videoOptions {
   width: 14%;
@@ -768,6 +761,18 @@ nav .toggle .nav-link.active a {
   max-width: 200px;
   border-radius: 5px;
 }
+
+.btn-respond {
+  border: none;
+  outline: none;
+  background-color: #1f74c2;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 /* media queries  */
 
 @media (max-width: 1050px) {

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webarch Forms</title>
+    <link rel="stylesheet" href="/viewForm.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="/formGeneration.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="heading">
+        <div class="col col-left">
+          <span id="title"><%= form.arObj[0].title %> </span>
+        </div>
+      </div>
+      <div class="toggle">
+        <div class="nav-link active">
+          <a href="#">Form</a>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+    <div class="body-content">
+      <div class="title-section">
+        <input type="text" placeholder="Title" class="title" value="Title" disabled />
+      </div>
+      <!-- description  -->
+      <div class="description">
+        <input type="text" disabled name="description" class="titleDesc" placeholder="Enter Description" value="<%= form.arObj[0].titleDesc %>" />
+      </div>
+      <!-- description end -->
+
+      <div class="form-content">
+          <% form.arObj.forEach((element,index) => { %>
+            <% if (index>0 && element.sectionTitle) { %>
+              <div class="new-section form-block">
+                <div class="section-id">Section <span class="current"><%= element.sectionNumber %> </div>
+                <div class="section-title">
+                  <input type="text" value="<%= element.sectionTitle %>" disabled/>
+                 
+                </div>
+                <div class="section-description">
+                  <textarea placeholder="Description" disabled><%= element.titleDescription %></textarea>
+                </div>
+              </div>
+            <% }  else if (index>0 && element.list) { %>
+                <div class="form-container form-block w-100 list">
+                    <div class="form-header">
+                      
+                      <div class="text-box">
+                        <div class="question-img"></div>
+                        <div class="question-section">
+                          <textarea placeholder="Enter question" disabled ><%= element.question %></textarea>
+                          <div class="question-image">
+                            <input
+                              type="file"
+                              name="question-image"
+                              class="input-question"
+                              accept="image/*"
+                            />
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input">
+                      <div class="mcq-option">
+                        <% if (element.type==="mcq") { %>
+                            <div class="mcqs">
+                                <% element.mcq.forEach((option,idx) => { %>
+                                   <div class="option">
+                                       <input type="radio" name="<%= index %>" />
+                                       <input type="text" placeholder="Enter option" value="<%= option.radioVal %>" disabled/>
+                                     </div>
+                                <% }) %>
+                               </div>
+                        <% } %>
+                        <% if (element.type==="checkbox") { %>
+                            <div class="checkbox-option">
+                                <div class="check-options">
+                                    <% element.checkB.forEach((option,idx) => { %>
+                                        <div class="option">
+                                            <input type="checkbox" />
+                                            <input type="text" placeholder="Enter option"  name="<%= index %>" value="<%= option.checkBoxVal %> "/>
+                                          </div>
+                                     <% }) %>
+                                </div>
+                              </div>
+                        <% } %>
+                        <% if (element.type==="short") { %>
+                            <div class="short-option">
+                                <input type="text" placeholder="Your Answer" />
+                              </div>
+                        <% } %>
+                        <% if (element.type==="para") { %>
+                            <div class="para-option">
+                                <textarea placeholder="Your Answer"></textarea>
+                              </div>
+                        <% } %>
+                        <% if (element.type==="date") { %>
+                            <div class="date-option">
+                                <input id="input-date" type="date" value="2020-10-31" />
+                              </div>
+                        <% } %>
+                        <% if (element.type==="time") { %>
+                            <div class="time-option">
+                                <input id="input-time" type="time" value="00:00:01" />
+                              </div>
+                        <% } %>
+                        <% if (element.type==="file") { %>
+                          <div class="file-upload">
+                              <div class="file-select">
+                                <div class="file-select-button fileName">Choose File</div>
+                                <div class="file-select-name noFile">No file chosen...</div>
+                                <input type="file" name="chooseFile" class="chooseFile" onchange="handleChange(this)"/>
+                              </div>
+                            </div>
+                      <% } %>
+                      </div>
+                    </div>
+                    <div class="bottom-section">
+                      <span class="child first">
+                        <span class="required">Required</span>
+                        <% if (element.required === true) { %>
+                         <input type="checkbox" checked disabled>
+                        <% } else {%>
+                           <input type="checkbox"  disabled>
+                          <% } %>
+                      </span>
+                     
+                    </div>
+                  </div>
+            <% } else if (index>0 && element.grid ) { %>
+                <div class="form-container form-block w-50 grid">
+                    <div class="form-header">
+                      
+                      <div class="text-box">
+                        <div class="question-img"></div>
+                        <div class="question-section">
+                          <textarea placeholder="Enter question" disabled ><%= element.question %></textarea>
+                          <div class="question-image">
+                            <input
+                              type="file"
+                              name="question-image"
+                              class="input-question"
+                              accept="image/*"
+                            />
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input">
+                      <div class="mcq-option">
+                        <% if (element.type==="mcq") { %>
+                            <div class="mcqs">
+                                <% element.mcq.forEach((option,idx) => { %>
+                                   <div class="option">
+                                       <input type="radio" name="<%= index %>" />
+                                       <input type="text" placeholder="Enter option" value="<%= option.radioVal %>" disabled/>
+                                     </div>
+                                <% }) %>
+                               </div>
+                        <% } %>
+                        <% if (element.type==="checkbox") { %>
+                            <div class="checkbox-option">
+                                <div class="check-options">
+                                    <% element.checkB.forEach((option,idx) => { %>
+                                        <div class="option">
+                                            <input type="checkbox" />
+                                            <input type="text" placeholder="Enter option"  name="<%= index %>" value="<%= option.checkBoxVal %> "/>
+                                          </div>
+                                     <% }) %>
+                                </div>
+                              </div>
+                        <% } %>
+                        <% if (element.type==="short") { %>
+                            <div class="short-option">
+                                <input type="text" placeholder="Your Answer" />
+                              </div>
+                        <% } %>
+                        <% if (element.type==="para") { %>
+                            <div class="para-option">
+                                <textarea placeholder="Your Answer"></textarea>
+                              </div>
+                        <% } %>
+                        <% if (element.type==="date") { %>
+                            <div class="date-option">
+                                <input id="input-date" type="date" value="2020-10-31" />
+                              </div>
+                        <% } %>
+                        <% if (element.type==="time") { %>
+                            <div class="time-option">
+                                <input id="input-time" type="time" value="00:00:01" />
+                              </div>
+                        <% } %>
+                        <% if (element.type==="file") { %>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                  <div class="file-select-button fileName">Choose File</div>
+                                  <div class="file-select-name noFile">No file chosen...</div>
+                                  <input type="file" name="chooseFile" class="chooseFile" onchange="handleChange(this)"/>
+                                </div>
+                              </div>
+                        <% } %>
+                       
+                      </div>
+                    </div>
+                    <div class="bottom-section">
+                      <span class="child first">
+                        <span class="required">Required</span>
+                        <% if (element.required === true) { %>
+                         <input type="checkbox" checked>
+                        <% } else {%>
+                           <input type="checkbox" >
+                          <% } %>
+                      </span>
+                     
+                    </div>
+                  </div>
+            <% } else if (index>0 && element.imgSingleFilename ) { %>
+              <div class="imageSection form-block addSection">
+                <div class="input-imagetitle">
+                  <input type="text" placeholder="Image Title" value="<%=element.imageSingleText%>" disabled/>
+                  
+                </div>
+                <div class="image">
+                  <img src="http://localhost:5000/image/<%= element.imgSingleFilename %>" alt="img" />
+                </div>
+              </div>
+           
+          <% } %>
+        <%}) %>
+          <div class="submit-response">
+            <button class="btn btn-respond">
+              Submit
+            </button>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -9,6 +9,7 @@ const router = Router();
 require("dotenv").config();
 
 router.get("/view/:id", checkUser, viewController.view_get);
+router.get("/view2/:id", checkUser, viewController.view_get_2);
 router.get("/videoTest/:id", (req, res) => {
   res.render("videoTest", {
     id: req.params.id,
