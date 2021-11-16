@@ -80,6 +80,20 @@ nav .toggle .nav-link a {
 nav .toggle .nav-link.active a {
   font-weight: 600;
 }
+
+/* Form response styling */
+
+.response-content {
+  display: none;
+  margin: 0 auto;
+  width: 60rem;
+  padding: 1rem;
+  height: 100vh;
+}
+
+table thead tr th:nth-child(4) {
+  padding: 0 1.2rem;
+}
 /* body styling  */
 .body-content {
   margin: 0 auto;
@@ -192,7 +206,10 @@ nav .toggle .nav-link.active a {
   font-size: 25px;
   transition: border 0.1s;
 }
-.body-content .form-content .section-title input[type="text"]:not(:placeholder-shown) {
+.body-content
+  .form-content
+  .section-title
+  input[type="text"]:not(:placeholder-shown) {
   font-weight: 600;
   border-bottom: 2px solid #1f74c2 !important;
 }
@@ -303,7 +320,13 @@ nav .toggle .nav-link.active a {
 .body-content .form-content .form-container .input .mcq-option .add-option {
   margin-top: 10px;
 }
-.body-content .form-content .form-container .input .mcq-option .add-option span {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .mcq-option
+  .add-option
+  span {
   font-size: 13px;
   color: #1f74c2;
   text-decoration: underline;
@@ -311,7 +334,12 @@ nav .toggle .nav-link.active a {
   cursor: pointer;
 }
 
-.body-content .form-content .form-container .input .mcq-option input[type="text"] {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .mcq-option
+  input[type="text"] {
   border: none !important;
   outline: none !important;
   padding-left: 5px;
@@ -326,7 +354,12 @@ nav .toggle .nav-link.active a {
   margin: 5px 0;
   padding: 10px 0;
 }
-.body-content .form-content .form-container .input .short-option input[type="text"] {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .short-option
+  input[type="text"] {
   border: none !important;
   outline: none !important;
   padding-left: 5px;
@@ -361,10 +394,21 @@ nav .toggle .nav-link.active a {
   cursor: pointer;
   font-size: 13px;
 }
-.body-content .form-content .form-container .input .checkbox-option .add-checkbox {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .checkbox-option
+  .add-checkbox {
   margin-top: 10px;
 }
-.body-content .form-content .form-container .input .checkbox-option .add-checkbox span {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .checkbox-option
+  .add-checkbox
+  span {
   font-size: 13px;
   color: #1f74c2;
   text-decoration: underline;
@@ -372,7 +416,12 @@ nav .toggle .nav-link.active a {
   cursor: pointer;
 }
 
-.body-content .form-content .form-container .input .checkbox-option input[type="text"] {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .checkbox-option
+  input[type="text"] {
   border: none !important;
   outline: none !important;
   padding-left: 5px;
@@ -414,7 +463,13 @@ nav .toggle .nav-link.active a {
   overflow: hidden;
   position: relative;
 }
-.body-content .form-content .form-container .input .file-upload .file-select .file-select-button {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select
+  .file-select-button {
   background: #1f74c2;
   color: white;
   padding: 0 10px;
@@ -422,13 +477,25 @@ nav .toggle .nav-link.active a {
   height: 40px;
   line-height: 40px;
 }
-.body-content .form-content .form-container .input .file-upload .file-select .file-select-name {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select
+  .file-select-name {
   line-height: 40px;
   display: inline-block;
   padding: 0 10px;
 }
 
-.body-content .form-content .form-container .input .file-upload .file-select input[type="file"] {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select
+  input[type="file"] {
   z-index: 100;
   cursor: pointer;
   position: absolute;
@@ -439,10 +506,20 @@ nav .toggle .nav-link.active a {
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select.file-select-disabled {
   opacity: 0.65;
 }
-.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled:hover {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select.file-select-disabled:hover {
   cursor: default;
   display: block;
   border: 2px solid #dce4ec;
@@ -456,7 +533,13 @@ nav .toggle .nav-link.active a {
   overflow: hidden;
   position: relative;
 }
-.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled:hover .file-select-button {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select.file-select-disabled:hover
+  .file-select-button {
   background: #dce4ec;
   color: #666;
   padding: 0 10px;
@@ -464,7 +547,13 @@ nav .toggle .nav-link.active a {
   height: 40px;
   line-height: 40px;
 }
-.body-content .form-content .form-container .input .file-upload .file-select.file-select-disabled:hover .file-select-name {
+.body-content
+  .form-content
+  .form-container
+  .input
+  .file-upload
+  .file-select.file-select-disabled:hover
+  .file-select-name {
   line-height: 40px;
   display: inline-block;
   padding: 0 10px;
@@ -493,7 +582,11 @@ nav .toggle .nav-link.active a {
   font-size: 14px;
   letter-spacing: 1px;
 }
-.body-content .form-content .form-container .bottom-section input[type="checkbox"] {
+.body-content
+  .form-content
+  .form-container
+  .bottom-section
+  input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
   width: 25px;
@@ -505,7 +598,11 @@ nav .toggle .nav-link.active a {
   left: 5px;
   transition: 0.3s;
 }
-.body-content .form-content .form-container .bottom-section input[type="checkbox"]::before {
+.body-content
+  .form-content
+  .form-container
+  .bottom-section
+  input[type="checkbox"]::before {
   content: "";
   position: absolute;
   left: 1px;
@@ -516,13 +613,21 @@ nav .toggle .nav-link.active a {
   border: 1px solid black;
   transition: 0.3s;
 }
-.body-content .form-content .form-container .bottom-section input[type="checkbox"]:checked:before {
+.body-content
+  .form-content
+  .form-container
+  .bottom-section
+  input[type="checkbox"]:checked:before {
   transform: translateX(9px);
   background: #1f74c2;
   border-color: #1f74c2;
 }
 
-.body-content .form-content .form-container .bottom-section input[type="checkbox"]:checked {
+.body-content
+  .form-content
+  .form-container
+  .bottom-section
+  input[type="checkbox"]:checked {
   border-color: #1f74c2;
 }
 

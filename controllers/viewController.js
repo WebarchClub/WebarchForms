@@ -12,3 +12,9 @@ module.exports.view_get_2 = async (req, res) => {
   const form = await Form.findOne({ formId: id });
   res.json({ form });
 };
+
+module.exports.viewresponse = async (req, res) => {
+  const id = "89e7ce71-3928-4520-ba5a-ffc61003384e";
+  const form = await Form.findOne({ formId: id });
+  res.render("responseForm", { form: form });
+};

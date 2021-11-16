@@ -25,116 +25,15 @@
         </div>
       </div>
       <div class="toggle">
+    
         <div class="nav-link active">
-          <a href="#" onclick="document.querySelector('.body-content').style.display='block';
-          document.querySelector('.response-content').style.display='none'
-          ">Form</a>
-        </div>
-        <div class="nav-link active">
-          <a href="#" onclick="document.querySelector('.body-content').style.display='none'; document.querySelector('.response-content').style.display='block'">Responses</a>
+          <a href="#">Response</a>
         </div>
       </div>
     </nav>
     <!-- navbar end -->
 
-    <div class="response-content">
-     
-      <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col" colspan="2">Name</th>
-                <th class="dnone" scope="col">Email</th>
-                <!-- <th class="dnone" scope="col">End Date</th> -->
-                <th scope="col">Response</th>
-            </tr>
-        </thead>
-        <tbody>
-        
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-                <tr>
-                  <td scope="row" colspan="2">
-                    Tanishq Kumar
-                  </th>
-                  <td>
-                    tanishq@gmail.com
-                  </td>
-                  <td><button
-                        class="active btn btn-primary link-btn grow" onclick="window.location.href='/viewresponse'"> View</button></td>
-                </tr>
-            
-        </tbody>
-    </table>
 
-    </div>
     <div class="body-content">
       <div class="title-section">
         <input type="text" placeholder="Title" class="title" value="Title" disabled />
@@ -233,17 +132,7 @@
                       <% } %>
                       </div>
                     </div>
-                    <div class="bottom-section">
-                      <span class="child first">
-                        <span class="required">Required</span>
-                        <% if (element.required === true) { %>
-                         <input type="checkbox" checked disabled>
-                        <% } else {%>
-                           <input type="checkbox"  disabled>
-                          <% } %>
-                      </span>
-                     
-                    </div>
+                
                   </div>
             <% } else if (index>0 && element.grid ) { %>
                 <div class="form-container form-block w-50 grid">
@@ -321,17 +210,7 @@
                        
                       </div>
                     </div>
-                    <div class="bottom-section">
-                      <span class="child first">
-                        <span class="required">Required</span>
-                        <% if (element.required === true) { %>
-                         <input type="checkbox" checked>
-                        <% } else {%>
-                           <input type="checkbox" >
-                          <% } %>
-                      </span>
-                     
-                    </div>
+              
                   </div>
             <% } else if (index>0 && element.imgSingleFilename ) { %>
               <div class="imageSection form-block addSection">
@@ -346,11 +225,7 @@
            
           <% } %>
         <%}) %>
-          <div class="submit-response">
-            <button class="btn btn-respond">
-              Submit
-            </button>
-          </div>
+    
       </div>
     </div>
   </body>
